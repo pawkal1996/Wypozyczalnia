@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package wypozyczalnia;
 
-/**
- *
- * @author Paweł K
- */
-public class Przycisk {
+import javax.swing.JButton;
+import javax.swing.JFrame;
     
+    
+
+public class Przycisk extends JFrame {
+        
+    private JButton bDodaj=new JButton("Dodaj samochód");
+    bDodaj.setBounds(10,20,100,20);
 }
