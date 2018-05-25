@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 public class Okno extends JFrame{
         
     Przycisk p = new Przycisk();
-    
+    Zakladki z = new Zakladki();
         public Okno(){
             setSize(800,500);
             setTitle("Wypożyczalnia 1.0");
@@ -15,6 +15,7 @@ public class Okno extends JFrame{
             setVisible(true);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             p.getOkno(this);
+            z.getOkno(this);
             
             
     }
