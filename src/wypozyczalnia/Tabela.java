@@ -1,6 +1,7 @@
 
 package wypozyczalnia;
 
+import java.awt.FlowLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -8,18 +9,19 @@ import javax.swing.JTable;
 
 public class Tabela {
     
-    private JTable tabSamochody = new JTable();
     
-    Object[][] dane = { {"Kowalski", "Jan", new Integer(30), new Boolean(true) },
-                    { "Jankowski", "Jan", new Integer(20), new Boolean(false) },
-                    
-                  };
-    Object[] nazwyKolumn = {"Nazwisko", "Imię", "Wiek", "Urlop wykorzystany?" };
-
-    JTable tab = new JTable(dane, nazwyKolumn);
-    JScrollPane sp = new JScrollPane(tab);
+    private String[] kolSamochody = {"Nr rej","Marka"};
+    private Object[][] daneSamochody={
+        {"WMA12333","Opel"},
+        {"WZ9094U","Volvo"}
+    };
+    private JTable tabSamochody = new JTable(daneSamochody, kolSamochody);
+    public Tabela(){
+        tabSamochody.setLayout(new FlowLayout());
+    }
+    
     
     public void getPanel(JPanel e){
-        e.add(tab);
+        e.add(tabSamochody);
     }
 }

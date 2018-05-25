@@ -2,6 +2,7 @@
 package wypozyczalnia;
 
 import com.sun.org.apache.bcel.internal.Constants;
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
@@ -29,7 +30,7 @@ public class Zakladki {
         zakladki.setTabPlacement(TOP);
         panelRodzic.setLayout(new GridLayout());
         panelRodzic.add(zakladki);
-        panelSamochody.setLayout(new FlowLayout());
+        panelSamochody.setLayout(new BorderLayout());
         tab1.getPanel(panelSamochody);
     }
     
