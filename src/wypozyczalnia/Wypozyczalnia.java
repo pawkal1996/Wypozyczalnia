@@ -14,8 +14,9 @@ public class Wypozyczalnia {
         
         Okno ramka = new Okno();
         
+    
        
-        
+
         
     }
     
