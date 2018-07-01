@@ -5,11 +5,13 @@
  */
 package wypozyczalnia;
 
-    public enum TypSamochodu {
-    HATCHBACK,
-    SEDAN,
-    KOMBI,
-    SUV,
-    PICKUP,
-    KABRIOLET,    
-    }
+/**
+ *
+ * @author Paweł K
+ */
+public class KlientFirma extends Klient{
+    private String nazwaFirmy;
+    private String nipFirmy;
+    private String adresFirmy;
+    private String telefonFirmy;
+}

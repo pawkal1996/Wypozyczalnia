@@ -18,7 +18,13 @@ public class Motocykl extends PojazdSpalinowy {
     public NapedMotocykla getNapedMotocykla(){
         return napedMotocykla;
     }
-
+    //settery
+    public void setTypMotocykla(TypMotocykla typMotocykla){
+        this.typMotocykla=typMotocykla;
+    }
+    public void setNapedMotocykla(NapedMotocykla napedMotocykla){
+        this.napedMotocykla=napedMotocykla;
+    }
     
     
 }

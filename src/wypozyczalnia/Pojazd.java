@@ -21,15 +21,15 @@ public abstract class Pojazd {
     
     
     
-    List<Pojazd> listaPojazdow = new ArrayList<Pojazd>();
-    //dodawanie pojazdu do listy+komunikat
+   // List<Pojazd> listaPojazdow = new ArrayList<Pojazd>();
+    
 
     
-    public void wyswietl(){
+    /*public void wyswietl(){
         for (Pojazd listaPojazdow1 : listaPojazdow) {
             System.out.println("fgh");
         } 
-    }
+    } */
     //gettery
     public int getId(){
         return id;
