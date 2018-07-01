@@ -12,10 +12,14 @@ import java.util.Date;
  * @author Paweł K
  */
 public abstract class Klient {
+        private static int idKlienta;
         private int iloscRezerwacji;
         private static Date dataRejestracji;
         
         //gettery
+        public int getIdKlienta(){
+            return idKlienta;
+        }
         public int getIloscRezerwacji(){
             return iloscRezerwacji;
         }

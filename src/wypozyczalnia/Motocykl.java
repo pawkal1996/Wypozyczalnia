@@ -10,7 +10,7 @@ public class Motocykl extends PojazdSpalinowy {
         this.typMotocykla=typMotocykla;
         this.napedMotocykla=napedMotocykla;
     }
-    
+
     //gettery
     public TypMotocykla getTypMotocykla(){
         return typMotocykla;
