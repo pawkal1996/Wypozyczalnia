@@ -5,6 +5,7 @@
  */
 package wypozyczalnia;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -15,7 +16,7 @@ public abstract class Klient extends Osoba {
         private static int idKlienta;
         private int iloscRezerwacji;
         private static Date dataRejestracji;
-        
+        public static ArrayList<Klient> listaKlientow = new ArrayList<Klient>();
         static int licznikIdKlienta;
         
         public Klient(String imie, String nazwisko, Date dataUrodzenia, String adres,

@@ -5,6 +5,7 @@
  */
 package wypozyczalnia;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -15,6 +16,7 @@ public class Kierowca extends Osoba{
     private Date dataZatrudnienia;
     private Date dataZwolnienia;
     private int pensja;
+    public static ArrayList<Kierowca> listaKierowcow = new ArrayList<Kierowca>();
     
     public Kierowca(String imie, String nazwisko, Date dataUrodzenia, String adres, 
                     String tel, Date dataZatrudnienia, Date dataZwolnienia, int pensja){

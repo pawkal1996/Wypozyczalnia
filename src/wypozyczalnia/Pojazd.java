@@ -10,6 +10,7 @@ public abstract class Pojazd {
     private String model;
     private int rokProdukcji;
     private int iloscMiejsc;
+
     static int licznikIdPoj=0;
     public static ArrayList<Pojazd> listaPojazdow = new ArrayList<Pojazd>();
     public Pojazd(int id, String marka, String model, int rokProdukcji, int iloscMiejsc){
@@ -44,6 +45,7 @@ public abstract class Pojazd {
     public int getIloscMiejsc(){
         return iloscMiejsc;
     }
+
     //settery
     public void setId(int id){
         this.id=id;
@@ -60,7 +62,7 @@ public abstract class Pojazd {
     public void setIloscMiejsc(int iloscMiejsc){
         this.iloscMiejsc=iloscMiejsc;
     }
-        
+
     public static void wyswietl(){
         
         for (Pojazd i : listaPojazdow) {
