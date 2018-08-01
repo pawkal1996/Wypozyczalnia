@@ -9,7 +9,9 @@ public class Samochod extends PojazdSpalinowy {
     
 
     
-    public Samochod(int id, String marka, String model, int rokProdukcji, int iloscMiejsc, String nrRej, String vin, int moc, int pojemnoscSilnika, TypNadwozia typNadwozia, int iloscDrzwi) {
+    public Samochod(int id, String marka, String model, int rokProdukcji, int iloscMiejsc, 
+                    String nrRej, String vin, int moc, int pojemnoscSilnika, 
+                    TypNadwozia typNadwozia, int iloscDrzwi) {
         super(id, marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika);
         this.typNadwozia=typNadwozia;
         this.iloscDrzwi=iloscDrzwi;

@@ -3,7 +3,8 @@ package wypozyczalnia;
 public class Rower extends Pojazd {
     private TypRoweru typRoweru;
     
-    public Rower(int id, String marka, String model, int rokProdukcji, int iloscMiejsc, TypRoweru typRoweru) {
+    public Rower(int id, String marka, String model, int rokProdukcji, int iloscMiejsc,
+                TypRoweru typRoweru) {
         super(id, marka, model, rokProdukcji, iloscMiejsc);
         this.typRoweru=typRoweru;      
     }

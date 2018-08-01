@@ -5,13 +5,49 @@
  */
 package wypozyczalnia;
 
+import java.util.Date;
+
 /**
  *
  * @author Paweł K
  */
-public class KlientFirma extends Klient{
+public class KlientFirma extends Klient {
     private String nazwaFirmy;
     private String nipFirmy;
     private String adresFirmy;
-    private String telefonFirmy;
+    
+    public KlientFirma(String imie, String nazwisko, Date dataUrodzenia, String adres,
+                       String tel, int idKlienta, int iloscRezerwacji, Date dataRejestracji,
+                       String nazwaFirmy, String nipFirmy, String adresFirmy){
+        super(imie, nazwisko, dataUrodzenia, adres, tel, idKlienta, iloscRezerwacji, dataRejestracji);
+        this.nazwaFirmy=nazwaFirmy;
+        this.nipFirmy=nipFirmy;
+        this.adresFirmy=adresFirmy;
+    }
+    
+    public String getNazwaFirmy(){
+        return nazwaFirmy;
+    }
+    
+    public String getNipFirmy(){
+        return nipFirmy;
+    }
+    
+    public String getAdresFirmy(){
+        return adresFirmy;
+    }
+    
+    
+    public void setNazwaFirmy(String nazwaFirmy){
+        this.nazwaFirmy=nazwaFirmy;
+    }
+    
+    public void setNipFirmy(String nipFirmy){
+        this.nipFirmy=nipFirmy;
+    }
+    
+    public void setAdresFirmy(String adresFirmy){
+        this.adresFirmy=adresFirmy;
+    }
+    
 }
