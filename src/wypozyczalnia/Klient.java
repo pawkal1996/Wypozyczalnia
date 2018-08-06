@@ -5,6 +5,8 @@
  */
 package wypozyczalnia;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,19 +17,25 @@ import java.util.Date;
 public abstract class Klient extends Osoba {
         private static int idKlienta;
         private int iloscRezerwacji;
-        private static Date dataRejestracji;
+        private static LocalDate dataRejestracji;
         public static ArrayList<Klient> listaKlientow = new ArrayList<Klient>();
         static int licznikIdKlienta;
+        DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
         
-        public Klient(String imie, String nazwisko, Date dataUrodzenia, String adres,
-                      String tel, int idKlienta, int iloscRezerwacji, Date dataRejestracji){
+        public Klient(String imie, String nazwisko, String dataUrodzenia, String adres,
+                      String tel,int iloscRezerwacji, String dataRejestracji){
             super(imie, nazwisko, dataUrodzenia, adres, tel);
             this.idKlienta=licznikIdKlienta;
             ++licznikIdKlienta;
             this.iloscRezerwacji=iloscRezerwacji;
-            this.dataRejestracji=dataRejestracji;
+            this.dataRejestracji = LocalDate.parse(dataRejestracji, formatDaty);
+            
             
         }
+        
+        
+        public abstract void dodajKlienta();
+        
         //gettery
         public int getIdKlienta(){
             return idKlienta;
@@ -35,7 +43,7 @@ public abstract class Klient extends Osoba {
         public int getIloscRezerwacji(){
             return iloscRezerwacji;
         }
-        public Date getDataRejestracji(){
+        public LocalDate getDataRejestracji(){
             return dataRejestracji;
         }
         

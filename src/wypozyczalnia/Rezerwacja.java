@@ -5,6 +5,8 @@
  */
 package wypozyczalnia;
 
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,15 +15,15 @@ import java.util.Date;
  */
 public class Rezerwacja {
     private static int idRezerwacji;
-    private Date dataStartu;
+    private ZonedDateTime dataStartu;
     private Date dataKonca;
     private Klient klient;
     private Pojazd pojazd;
     private int kosztRezerwacji;
     private StatusRezerwacji statusRezerwacji;
-    
+    public static ArrayList<Rezerwacja> listaRezerwacji = new ArrayList<Rezerwacja>();
     static int licznikId=0;
-    public Rezerwacja(int idRezerwacji, Date dataStartu, Date dataKonca, Klient klient,
+    public Rezerwacja(int idRezerwacji, ZonedDateTime dataStartu, Date dataKonca, Klient klient,
                       Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
         
         this.idRezerwacji=licznikId;
@@ -34,10 +36,22 @@ public class Rezerwacja {
         this.statusRezerwacji=statusRezerwacji;
     }
     
+    public boolean sprawdzRezerwacje(Rezerwacja rezerwacja){
+        for (Rezerwacja i : listaRezerwacji) {
+            if(i.getPojazd()==pojazd){
+                if(i.dataStartu.isAfter(rezerwacja.dataStartu)){
+                    System.out.println("git");
+                    return true;
+                }
+                
+            }
+        }
+        return false;
+    }
     public int getIdRezerwacji(){
         return idRezerwacji;
     }
-    public Date getDataStartu(){
+    public ZonedDateTime getDataStartu(){
         return dataStartu;
     }
     public Date getDataKonca(){
@@ -55,7 +69,7 @@ public class Rezerwacja {
     public StatusRezerwacji getStatusRezerwacji(){
         return statusRezerwacji;        
     }
-    public void setDataStartu(Date dataStartu){
+    public void setDataStartu(ZonedDateTime dataStartu){
         this.dataStartu=dataStartu;
     }
     public void setDataKonca(Date dataKonca){

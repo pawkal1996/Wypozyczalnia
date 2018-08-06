@@ -5,6 +5,8 @@
  */
 package wypozyczalnia;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,34 +15,35 @@ import java.util.Date;
  * @author Paweł K
  */
 public class Kierowca extends Osoba{
-    private Date dataZatrudnienia;
-    private Date dataZwolnienia;
+    private LocalDate dataZatrudnienia;
+    private LocalDate dataZwolnienia;
     private int pensja;
     public static ArrayList<Kierowca> listaKierowcow = new ArrayList<Kierowca>();
+    DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
     
-    public Kierowca(String imie, String nazwisko, Date dataUrodzenia, String adres, 
-                    String tel, Date dataZatrudnienia, Date dataZwolnienia, int pensja){
+    public Kierowca(String imie, String nazwisko, String dataUrodzenia, String adres, 
+                    String tel, String dataZatrudnienia, String dataZwolnienia, int pensja){
         super(imie, nazwisko, dataUrodzenia, adres, tel);
-        this.dataZatrudnienia=dataZatrudnienia;
-        this.dataZwolnienia=dataZwolnienia;
+        this.dataZatrudnienia=LocalDate.parse(dataZatrudnienia,formatDaty);
+        this.dataZwolnienia=LocalDate.parse(dataZwolnienia,formatDaty);
         this.pensja=pensja;
     }
     
-    public Date getDataZatrudnienia(){
+    public LocalDate getDataZatrudnienia(){
         return dataZatrudnienia;
     }
-    public Date getDataZwolnienia(){
+    public LocalDate getDataZwolnienia(){
         return dataZwolnienia;
     }
     public int getPensja(){
         return pensja;
     }
     
-    public void setDataZatrudnienia(Date dataZatrudnienia){
-        this.dataZatrudnienia=dataZatrudnienia;
+    public void setDataZatrudnienia(String dataZatrudnienia){
+        this.dataZatrudnienia=LocalDate.parse(dataZatrudnienia,formatDaty);
     }
-    public void setDataZwolnienia(Date dataZwolnienia){
-        this.dataZwolnienia=dataZwolnienia;
+    public void setDataZwolnienia(String dataZwolnienia){
+        this.dataZwolnienia=LocalDate.parse(dataZwolnienia,formatDaty);
     }
     public void setPensja(int pensja){
         this.pensja=pensja;

@@ -16,13 +16,17 @@ public class KlientFirma extends Klient {
     private String nipFirmy;
     private String adresFirmy;
     
-    public KlientFirma(String imie, String nazwisko, Date dataUrodzenia, String adres,
-                       String tel, int idKlienta, int iloscRezerwacji, Date dataRejestracji,
+    public KlientFirma(String imie, String nazwisko, String dataUrodzenia, String adres,
+                       String tel, int iloscRezerwacji, String dataRejestracji,
                        String nazwaFirmy, String nipFirmy, String adresFirmy){
-        super(imie, nazwisko, dataUrodzenia, adres, tel, idKlienta, iloscRezerwacji, dataRejestracji);
+        super(imie, nazwisko, dataUrodzenia, adres, tel, iloscRezerwacji, dataRejestracji);
         this.nazwaFirmy=nazwaFirmy;
         this.nipFirmy=nipFirmy;
         this.adresFirmy=adresFirmy;
+    }
+    
+    public void dodajKlienta(){
+        
     }
     
     public String getNazwaFirmy(){

@@ -5,6 +5,8 @@
  */
 package wypozyczalnia;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -14,14 +16,15 @@ import java.util.Date;
 public class Osoba {
     private String imie;
     private String nazwisko;
-    private Date dataUrodzenia;
+    private LocalDate dataUrodzenia;
     private String adres;
     private String tel;
+    DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
     
-    public Osoba(String imie, String nazwisko, Date dataUrodzenia, String adres, String tel){
+    public Osoba(String imie, String nazwisko, String dataUrodzenia, String adres, String tel){
         this.imie=imie;
         this.nazwisko=nazwisko;
-        this.dataUrodzenia=dataUrodzenia;
+        this.dataUrodzenia = LocalDate.parse(dataUrodzenia, formatDaty);
         this.adres=adres;
         this.tel=tel;
     }
@@ -32,7 +35,7 @@ public class Osoba {
     public String getNazwisko(){
         return nazwisko;
     }
-    public Date getDataUrodzenia(){
+    public LocalDate getDataUrodzenia(){
         return dataUrodzenia;
     }
     public String getAdres(){
@@ -48,8 +51,8 @@ public class Osoba {
     public void setNazwisko(String nazwisko){
         this.nazwisko=nazwisko;
     }
-    public void setDataUrodzenia(Date dataUrodzenia){
-        this.dataUrodzenia=dataUrodzenia;
+    public void setDataUrodzenia(String dataUrodzenia){
+        this.dataUrodzenia=LocalDate.parse(dataUrodzenia, formatDaty);
     }
     public void setAdres(String adres){
         this.adres=adres;
