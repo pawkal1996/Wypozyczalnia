@@ -19,13 +19,10 @@ public class KlientOsFizyczna extends Klient {
     public KlientOsFizyczna(String imie, String nazwisko, String dataUrodzenia, String adres,
                       String tel, int idKlienta, int iloscRezerwacji, String dataRejestracji,
                       String numerDowodu){
-        super(imie, nazwisko, dataUrodzenia, adres, tel, iloscRezerwacji, dataRejestracji);
+        super(imie, nazwisko, dataUrodzenia, adres, tel);
         this.numerDowodu=numerDowodu;
     }
     
-    public void dodajKlienta(){
-        
-    }
     public String getNumerDowodu(){
         return numerDowodu;
     }    

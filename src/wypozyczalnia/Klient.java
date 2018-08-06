@@ -23,18 +23,20 @@ public abstract class Klient extends Osoba {
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
         
         public Klient(String imie, String nazwisko, String dataUrodzenia, String adres,
-                      String tel,int iloscRezerwacji, String dataRejestracji){
+                      String tel){
             super(imie, nazwisko, dataUrodzenia, adres, tel);
+                
             this.idKlienta=licznikIdKlienta;
             ++licznikIdKlienta;
             this.iloscRezerwacji=iloscRezerwacji;
-            this.dataRejestracji = LocalDate.parse(dataRejestracji, formatDaty);
-            
-            
+            this.dataRejestracji = LocalDate.now();
+                      
         }
         
         
-        public abstract void dodajKlienta();
+        
+        
+        //public abstract void dodajKlienta();
         
         //gettery
         public int getIdKlienta(){

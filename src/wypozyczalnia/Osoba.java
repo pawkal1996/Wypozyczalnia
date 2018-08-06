@@ -7,13 +7,12 @@ package wypozyczalnia;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 /**
  *
  * @author Paweł K
  */
-public class Osoba {
+public abstract class Osoba {
     private String imie;
     private String nazwisko;
     private LocalDate dataUrodzenia;
@@ -21,12 +20,14 @@ public class Osoba {
     private String tel;
     DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
     
+    
     public Osoba(String imie, String nazwisko, String dataUrodzenia, String adres, String tel){
-        this.imie=imie;
-        this.nazwisko=nazwisko;
-        this.dataUrodzenia = LocalDate.parse(dataUrodzenia, formatDaty);
-        this.adres=adres;
-        this.tel=tel;
+            
+            this.imie=imie;
+            this.nazwisko=nazwisko;
+            this.dataUrodzenia=LocalDate.parse(dataUrodzenia, formatDaty);
+            this.adres=adres;
+            this.tel=tel;
     }
     //gettery
     public String getImie(){
@@ -51,8 +52,8 @@ public class Osoba {
     public void setNazwisko(String nazwisko){
         this.nazwisko=nazwisko;
     }
-    public void setDataUrodzenia(String dataUrodzenia){
-        this.dataUrodzenia=LocalDate.parse(dataUrodzenia, formatDaty);
+    public void setDataUrodzenia(LocalDate dataUrodzenia){
+        this.dataUrodzenia=dataUrodzenia;
     }
     public void setAdres(String adres){
         this.adres=adres;

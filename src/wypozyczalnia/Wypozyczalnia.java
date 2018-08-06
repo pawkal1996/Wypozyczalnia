@@ -1,8 +1,5 @@
 package wypozyczalnia;
 
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -27,10 +24,9 @@ public class Wypozyczalnia {
         Rower rower = new Rower(1,"Romet","Wigry",2009,2,TypRoweru.MIEJSKI);
         Date data1 = new Date(2018,8,23);
         Date data2 = new Date(2015,2,21);
-        KlientFirma klient1 = new KlientFirma("Pawel", "Kalasiewicz", "2012 01 12", "Lowicka 12",
-                       "568892332", 4, "2010 01 12",
-                       "MoreLiny", "734857832", "Kaszubska 123");
-        System.out.println(klient1.getNazwaFirmy());
+        KlientFirma.dodajKlienta("Paweł", "Nowak", "2001 07 12", "Lowicka 23","789100081",
+                    "Kaszanka", "0920385520", "Dzika 812");
+        
         
         //Pojazd.dodajPojazd(rower);
         //Pojazd.wyswietl();
