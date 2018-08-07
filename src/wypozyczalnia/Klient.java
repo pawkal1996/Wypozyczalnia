@@ -22,7 +22,7 @@ public abstract class Klient extends Osoba {
         static int licznikIdKlienta;
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
         
-        public Klient(String imie, String nazwisko, String dataUrodzenia, String adres,
+        public Klient(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                       String tel){
             super(imie, nazwisko, dataUrodzenia, adres, tel);
                 

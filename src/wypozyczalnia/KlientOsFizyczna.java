@@ -16,7 +16,7 @@ import java.util.Date;
 public class KlientOsFizyczna extends Klient {
     private String numerDowodu;
     
-    public KlientOsFizyczna(String imie, String nazwisko, String dataUrodzenia, String adres,
+    public KlientOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                       String tel, int idKlienta, int iloscRezerwacji, String dataRejestracji,
                       String numerDowodu){
         super(imie, nazwisko, dataUrodzenia, adres, tel);

@@ -21,11 +21,11 @@ public abstract class Osoba {
     DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
     
     
-    public Osoba(String imie, String nazwisko, String dataUrodzenia, String adres, String tel){
+    public Osoba(String imie, String nazwisko, LocalDate dataUrodzenia, String adres, String tel){
             
             this.imie=imie;
             this.nazwisko=nazwisko;
-            this.dataUrodzenia=LocalDate.parse(dataUrodzenia, formatDaty);
+            this.dataUrodzenia=dataUrodzenia;
             this.adres=adres;
             this.tel=tel;
     }

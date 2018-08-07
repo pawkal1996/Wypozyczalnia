@@ -20,7 +20,7 @@ public class Kierowca extends Osoba{
     public static ArrayList<Kierowca> listaKierowcow = new ArrayList<Kierowca>();
     DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
     
-    public Kierowca(String imie, String nazwisko, String dataUrodzenia, String adres, 
+    public Kierowca(String imie, String nazwisko, LocalDate dataUrodzenia, String adres, 
                     String tel, String dataZatrudnienia, String dataZwolnienia, int pensja){
         super(imie, nazwisko, dataUrodzenia, adres, tel);
         this.dataZatrudnienia=LocalDate.parse(dataZatrudnienia,formatDaty);

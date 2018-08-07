@@ -17,7 +17,7 @@ public class KlientFirma extends Klient {
     private String nipFirmy;
     private String adresFirmy;
     
-    public KlientFirma(String imie, String nazwisko, String dataUrodzenia, String adres,
+    public KlientFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                        String tel,
                        String nazwaFirmy, String nipFirmy, String adresFirmy){
         super(imie, nazwisko, dataUrodzenia, adres, tel);
@@ -28,8 +28,15 @@ public class KlientFirma extends Klient {
         
     }
     
-    public static boolean sprawdzKlienta(LocalDate dataUrodzenia, String tel, String nipFirmy){
+ 
+    
+    
+    public static boolean dodajKlienta(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+                       String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
+            
+        DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
         LocalDate teraz = LocalDate.now();
+        
         if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
             System.out.println("Klient niepełnoletni!");
             return false;               
@@ -43,26 +50,12 @@ public class KlientFirma extends Klient {
             System.out.println("Błędny NIP!");
             return false;
         }
-        else return true;
-        
-    }
-    
-
-    
-    
-    
-    public static void dodajKlienta(String imie, String nazwisko, String dataUrodzenia, String adres,
-                       String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
-            
-        DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
-        LocalDate tmpDate = LocalDate.parse(dataUrodzenia,formatDaty);
-        if (sprawdzKlienta(tmpDate,tel,nipFirmy)){
             KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
                        tel, nazwaFirmy, nipFirmy, adresFirmy);
-            System.out.println(klient.getNazwaFirmy());
+            System.out.println("Dodane klienta-firmę o nazwie "+klient.getNazwaFirmy());
+            return true;
         }
-        else System.out.println("Nie utworzono obiektu");
-    }
+        
     
     public String getNazwaFirmy(){
         return nazwaFirmy;
