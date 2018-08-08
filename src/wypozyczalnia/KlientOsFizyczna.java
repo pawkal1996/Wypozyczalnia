@@ -6,6 +6,7 @@
 package wypozyczalnia;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -17,10 +18,35 @@ public class KlientOsFizyczna extends Klient {
     private String numerDowodu;
     
     public KlientOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-                      String tel, int idKlienta, int iloscRezerwacji, String dataRejestracji,
-                      String numerDowodu){
+                      String tel, String numerDowodu){
         super(imie, nazwisko, dataUrodzenia, adres, tel);
         this.numerDowodu=numerDowodu;
+    }
+    
+    public static boolean dodajKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+            String tel, String numerDowodu){
+ 
+    	DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
+    	LocalDate teraz = LocalDate.now();
+
+    	if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
+    		System.out.println("Klient niepelnoletni!");
+    		return false;               
+    	}
+
+    	if(!tel.matches("[0-9]{9}")) {
+    		System.out.println("Bledny numer telefonu!");
+    		return false;
+    	}
+    	if(!numerDowodu.matches("[A-Z]{3}[0-9]{6}")) {
+    		System.out.println("Bledny numer dowodu");
+    		return false;
+    	}
+    	KlientOsFizyczna klient = new KlientOsFizyczna(imie,nazwisko,dataUrodzenia,adres,
+            tel,numerDowodu);
+    	System.out.println("Dodano klienta-osobe o nazwisku "+klient.getNazwisko());
+    	System.out.println("Data rejestracji: "+klient.getDataRejestracji());
+    	return true;
     }
     
     public String getNumerDowodu(){

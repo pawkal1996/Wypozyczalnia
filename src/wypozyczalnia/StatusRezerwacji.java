@@ -2,6 +2,6 @@ package wypozyczalnia;
 
 public enum StatusRezerwacji {
     PLANOWANA,
-    TRWAJĄCA,
-    ZAKOŃCZONA,    
+    TRWAJACA,
+    ZAKONCZONA,    
 }

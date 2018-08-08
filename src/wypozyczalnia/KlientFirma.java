@@ -31,28 +31,28 @@ public class KlientFirma extends Klient {
  
     
     
-    public static boolean dodajKlienta(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+    public static boolean dodajKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                        String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
             
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
         LocalDate teraz = LocalDate.now();
         
         if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
-            System.out.println("Klient niepełnoletni!");
+            System.out.println("Klient niepelnoletni!");
             return false;               
         }
         
         if(!tel.matches("[0-9]{9}")) {
-            System.out.println("Błędny numer telefonu!");
+            System.out.println("Bledny numer telefonu!");
             return false;
         }
         if(!nipFirmy.matches("[0-9]{10}")) {
-            System.out.println("Błędny NIP!");
+            System.out.println("Bledny NIP!");
             return false;
         }
             KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
                        tel, nazwaFirmy, nipFirmy, adresFirmy);
-            System.out.println("Dodane klienta-firmę o nazwie "+klient.getNazwaFirmy());
+            System.out.println("Dodano klienta-firme o nazwie "+klient.getNazwaFirmy());
             return true;
         }
         
