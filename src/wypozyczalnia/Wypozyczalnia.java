@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
-
+//New branch
 
 public class Wypozyczalnia {
     
@@ -25,7 +25,7 @@ public class Wypozyczalnia {
         Motocykl mot8 = new Motocykl(1,"Kawasaki","Ninja",2005,2,"WR1231","numervintujest",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
         Rower rower = new Rower(1,"Romet","Wigry",2009,2,TypRoweru.MIEJSKI);
         
-        KlientFirma.dodajKlientaFirma("Pawel‚", "Nowak", LocalDate.parse("1996 07 12",formatDaty), "Lowicka 23","789100081",
+        KlientFirma.dodajKlientaFirma("Pawelï¿½", "Nowak", LocalDate.parse("1996 07 12",formatDaty), "Lowicka 23","789100081",
                     "Kaszanki3", "0920385520", "Dzika 812"); 
         KlientOsFizyczna.dodajKlientaOsFizyczna("Igor", "Kowalski", LocalDate.parse("1996 07 25",formatDaty), "Niepodleglosci 8",
         			"834123234", "AYY235125");
