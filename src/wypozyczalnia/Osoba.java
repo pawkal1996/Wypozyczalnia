@@ -13,11 +13,11 @@ import java.time.format.DateTimeFormatter;
  * @author Paweł K
  */
 public abstract class Osoba {
-    private String imie;
-    private String nazwisko;
+    protected String imie;
+    protected String nazwisko;
     private LocalDate dataUrodzenia;
-    private String adres;
-    private String tel;
+    protected String adres;
+    protected String tel;
     DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
     
     

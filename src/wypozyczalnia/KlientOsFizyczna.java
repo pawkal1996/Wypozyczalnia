@@ -17,6 +17,7 @@ import java.util.Date;
 public class KlientOsFizyczna extends Klient {
     private String numerDowodu;
     
+    
     public KlientOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                       String tel, String numerDowodu){
         super(imie, nazwisko, dataUrodzenia, adres, tel);
@@ -38,6 +39,7 @@ public class KlientOsFizyczna extends Klient {
     		System.out.println("Bledny numer telefonu!");
     		return false;
     	}
+    	
     	if(!numerDowodu.matches("[A-Z]{3}[0-9]{6}")) {
     		System.out.println("Bledny numer dowodu");
     		return false;
@@ -51,7 +53,22 @@ public class KlientOsFizyczna extends Klient {
     	if(sprawdzKlientaOsFizyczna(imie,nazwisko,dataUrodzenia,adres,tel,numerDowodu)) {
     		KlientOsFizyczna klient = new KlientOsFizyczna(imie,nazwisko,dataUrodzenia,adres,
     	            tel,numerDowodu);
+    			listaKlientow.add(klient);
     	    	System.out.println("Dodano klienta-osobe o nazwisku "+klient.getNazwisko()+" oraz id klienta "+klient.getIdKlienta());
+    	    	return true;
+    	}
+    	else return false;
+    }
+    
+    public boolean zmienKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+            String tel, String numerDowodu) {
+    	if(sprawdzKlientaOsFizyczna(imie,nazwisko,dataUrodzenia,adres,tel,numerDowodu)) {
+    			this.setImie(imie);
+    			this.setNazwisko(nazwisko);
+    			this.setDataUrodzenia(dataUrodzenia);
+    			this.setAdres(adres);
+    			this.setTel(tel);
+ 
     	    	return true;
     	}
     	else return false;

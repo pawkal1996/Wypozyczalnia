@@ -65,6 +65,23 @@ public class KlientFirma extends Klient {
     		
     	}
     
+    	public boolean zmienKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+                String tel, String nazwaFirmy, String nipFirmy, String adresFirmy) {
+        	if(sprawdzKlientaFirma(imie,nazwisko,dataUrodzenia,adres,tel,nazwaFirmy,nipFirmy,adresFirmy)) {
+        			this.setImie(imie);
+        			this.setNazwisko(nazwisko);
+        			this.setDataUrodzenia(dataUrodzenia);
+        			this.setAdres(adres);
+        			this.setTel(tel);
+        			this.setNazwaFirmy(nazwaFirmy);
+        			this.setNipFirmy(nipFirmy);
+        			this.setAdresFirmy(adresFirmy);
+     
+        	    	return true;
+        	}
+        	else return false;
+        }
+    	
     public String getNazwaFirmy(){
         return nazwaFirmy;
     }
