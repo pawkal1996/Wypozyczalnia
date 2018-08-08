@@ -9,6 +9,15 @@ public class Rower extends Pojazd {
         this.typRoweru=typRoweru;      
     }
     
+    public static boolean dodajRower(String marka, String model, int rokProdukcji,
+    		int iloscMiejsc, TypRoweru typRoweru) {
+    	int a=2;
+    	if(a>3) {
+    		return true;
+    	}
+    	return false;
+    }
+    
     //gettery
     public TypRoweru getTypRoweru(){
         return typRoweru;
