@@ -31,7 +31,7 @@ public class KlientFirma extends Klient {
  
     
     
-    public static boolean dodajKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+    public static boolean sprawdzKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                        String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
             
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
@@ -50,12 +50,20 @@ public class KlientFirma extends Klient {
             System.out.println("Bledny NIP!");
             return false;
         }
-            KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
-                       tel, nazwaFirmy, nipFirmy, adresFirmy);
-            System.out.println("Dodano klienta-firme o nazwie "+klient.getNazwaFirmy());
             return true;
         }
         
+    	public static boolean dodajKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+    			String tel, String nazwaFirmy, String nipFirmy, String adresFirmy) {
+    		if(sprawdzKlientaFirma(imie,nazwisko,dataUrodzenia,adres,tel,nazwaFirmy,nipFirmy,adresFirmy)) {
+    			 KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
+                         tel, nazwaFirmy, nipFirmy, adresFirmy);
+    			 System.out.println("Dodano klienta-firme o nazwie "+klient.getNazwaFirmy()+" oraz id klienta "+klient.getIdKlienta());
+    			 return true;
+    		}
+    		else return false;
+    		
+    	}
     
     public String getNazwaFirmy(){
         return nazwaFirmy;

@@ -23,7 +23,7 @@ public class KlientOsFizyczna extends Klient {
         this.numerDowodu=numerDowodu;
     }
     
-    public static boolean dodajKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+    public static boolean sprawdzKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
             String tel, String numerDowodu){
  
     	DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
@@ -42,12 +42,21 @@ public class KlientOsFizyczna extends Klient {
     		System.out.println("Bledny numer dowodu");
     		return false;
     	}
-    	KlientOsFizyczna klient = new KlientOsFizyczna(imie,nazwisko,dataUrodzenia,adres,
-            tel,numerDowodu);
-    	System.out.println("Dodano klienta-osobe o nazwisku "+klient.getNazwisko());
-    	System.out.println("Data rejestracji: "+klient.getDataRejestracji());
+    	
     	return true;
     }
+    
+    public static boolean dodajKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
+            String tel, String numerDowodu) {
+    	if(sprawdzKlientaOsFizyczna(imie,nazwisko,dataUrodzenia,adres,tel,numerDowodu)) {
+    		KlientOsFizyczna klient = new KlientOsFizyczna(imie,nazwisko,dataUrodzenia,adres,
+    	            tel,numerDowodu);
+    	    	System.out.println("Dodano klienta-osobe o nazwisku "+klient.getNazwisko()+" oraz id klienta "+klient.getIdKlienta());
+    	    	return true;
+    	}
+    	else return false;
+    }
+    
     
     public String getNumerDowodu(){
         return numerDowodu;
