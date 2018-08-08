@@ -55,6 +55,11 @@ public class KlientOsFizyczna extends Klient {
     		KlientOsFizyczna klient = new KlientOsFizyczna(imie,nazwisko,dataUrodzenia,adres,
     	            tel,numerDowodu);
     		listaKlientOsFizyczna.add(klient);
+                
+                //Tu przekazujesz klienta
+                
+                DataStore.storePerson(klient);
+                
     	    	System.out.println("Dodano klienta-osobe o nazwisku "+klient.getNazwisko()+" oraz id klienta "+klient.getIdKlienta());
     	    	return true;
     	}
