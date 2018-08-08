@@ -7,6 +7,7 @@ package wypozyczalnia;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,7 @@ public class KlientFirma extends Klient {
     private String nazwaFirmy;
     private String nipFirmy;
     private String adresFirmy;
+    public static ArrayList<KlientFirma> listaKlientFirma = new ArrayList<KlientFirma>();
     
     public KlientFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
                        String tel,
@@ -58,6 +60,7 @@ public class KlientFirma extends Klient {
     		if(sprawdzKlientaFirma(imie,nazwisko,dataUrodzenia,adres,tel,nazwaFirmy,nipFirmy,adresFirmy)) {
     			 KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
                          tel, nazwaFirmy, nipFirmy, adresFirmy);
+    			 listaKlientFirma.add(klient);
     			 System.out.println("Dodano klienta-firme o nazwie "+klient.getNazwaFirmy()+" oraz id klienta "+klient.getIdKlienta());
     			 return true;
     		}

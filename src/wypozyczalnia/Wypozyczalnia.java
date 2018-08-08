@@ -32,12 +32,13 @@ public class Wypozyczalnia {
         
         /*KlientOsFizyczna klient = new KlientOsFizyczna("Igor", "Kowalski", LocalDate.parse("1996 07 25",formatDaty), "Niepodleglosci 8",
     			"834123234", "AYY235125");*/
-        KlientFirma klient = new KlientFirma("Pawel‚", "Nowak", LocalDate.parse("1996 07 12",formatDaty), "Lowicka 23","789100081",
+        KlientFirma klient = new KlientFirma("Pawel", "Nowak", LocalDate.parse("1996 07 12",formatDaty), "Lowicka 23","789100081",
                     "Kaszanki3", "0920385520", "Dzika 812");
         System.out.println(klient.imie);
         
         /*klient.zmienKlientaOsFizyczna("Pawel", "Kowalski", LocalDate.parse("1996 07 25",formatDaty), "Niepodleglosci 8",
     			"834123234", "AYY235125");*/
+        
         klient.zmienKlientaFirma("Zbigniew", "Nowak", LocalDate.parse("1996 07 12",formatDaty), "Lowicka 23","789100081",
                     "Kaszanki3", "0920385520", "Dzika 812");
         System.out.println(klient.imie);

@@ -18,7 +18,7 @@ public abstract class Klient extends Osoba {
         private static int idKlienta;
         private int iloscRezerwacji;
         private static LocalDate dataRejestracji;
-        public static ArrayList<Klient> listaKlientow = new ArrayList<Klient>();
+        
         static int licznikIdKlienta;
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
         
@@ -32,7 +32,7 @@ public abstract class Klient extends Osoba {
             this.dataRejestracji = LocalDate.now();
                       
         }
-        
+
         
         
         
