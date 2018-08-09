@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class DataStore{
-	
+	private static DataBaseList db;
 	public static void storeKlientFirma(KlientFirma k) {
 		if(sprawdzKlientaFirma(k.imie, k.nazwisko, k.getDataUrodzenia(), k.adres,
 				k.tel, k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
-			DataBaseList.zapiszKlienta(k);
+			db.zapiszKlienta(k);
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class DataStore{
 		 if(sprawdzKlientaFirma(imie,nazwisko,dataUrodzenia,adres,tel,nazwaFirmy,nipFirmy,adresFirmy)) {
 			 KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
                tel, nazwaFirmy, nipFirmy, adresFirmy);
-	     DataBaseList.zapiszKlienta(klient);
+	     db.zapiszKlienta(klient);
 		 System.out.println("Dodano klienta-firme o nazwie "+klient.getNazwaFirmy()+" oraz id klienta "+klient.getIdKlienta());
 		 return true;
 	}
