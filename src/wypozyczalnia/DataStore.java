@@ -14,14 +14,12 @@ public class DataStore {
     private DataStore(){}
     
     static boolean initStore(){
-        
         //Tworzenie bazy, czy tam kolejek czy czegoś
         if((new ListDataBase()) instanceof StoreDriver){
              db=(StoreDriver) new ListDataBase();
              db.init();
              return true;
         }
-        
         return false;
     }
     
@@ -31,6 +29,7 @@ public class DataStore {
         return false;
     }
     static boolean storePerson(Osoba p){
+        
         return false;
     }
     
@@ -43,4 +42,5 @@ public class DataStore {
     static Pojazd loadPerson(int id){
         return null;
     }
+    
 }

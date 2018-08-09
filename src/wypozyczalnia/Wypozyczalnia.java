@@ -14,7 +14,7 @@ public class Wypozyczalnia {
     public static void main(String[] args) {
          
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
-        
+        DataStore.initStore();
         Samochod mot1 = new Samochod(1, "Opel", "Astra", 2005, 5, "DW485WP", "SDFSDFS2323", 125, 1788, TypNadwozia.HATCHBACK, 5);
         Samochod mot2 = new Samochod(1, "Nissan", "Astra", 2005, 5, "DW485WP", "SDFSDFS2323", 125, 1788, TypNadwozia.HATCHBACK, 5);
         Samochod mot3 = new Samochod(1, "Ferrari", "Astra", 2005, 5, "DW485WP", "SDFSDFS2323", 125, 1788, TypNadwozia.HATCHBACK, 5);
