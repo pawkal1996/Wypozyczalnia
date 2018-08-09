@@ -16,7 +16,7 @@ public class DataStore {
     static boolean initStore(){
         //Tworzenie bazy, czy tam kolejek czy czegoś
         if((new ListDataBase()) instanceof StoreDriver){
-             db=(StoreDriver) new ListDataBase();
+             db = new ListDataBase();
              db.init();
              return true;
         }
