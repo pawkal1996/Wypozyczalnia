@@ -7,6 +7,7 @@ public class DataBaseList {
 	
 	public static boolean zapiszKlienta(Klient klient) {
 		listaKlient.add(klient);
+		System.out.println("Dodano klienta o id "+klient.getIdKlienta());
 		return true;
 	}
 }

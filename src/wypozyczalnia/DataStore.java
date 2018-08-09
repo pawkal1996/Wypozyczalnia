@@ -3,9 +3,9 @@ package wypozyczalnia;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class DataStore implements StoreDriver{
+public class DataStore{
 	
-	public void storeKlientFirma(KlientFirma k) {
+	public static void storeKlientFirma(KlientFirma k) {
 		if(sprawdzKlientaFirma(k.imie, k.nazwisko, k.getDataUrodzenia(), k.adres,
 				k.tel, k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
 			DataBaseList.zapiszKlienta(k);

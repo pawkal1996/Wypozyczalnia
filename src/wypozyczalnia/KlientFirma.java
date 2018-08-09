@@ -27,7 +27,7 @@ public class KlientFirma extends Klient {
         this.nazwaFirmy=nazwaFirmy;
         this.nipFirmy=nipFirmy;
         this.adresFirmy=adresFirmy;
-        
+        DataStore.storeKlientFirma(this);
     }
     
 	public boolean zmienKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
