@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class DataStore{
-	private static DataBaseList db;
+	private static DataBaseList db = new DataBaseList();
 	public static void storeKlientFirma(KlientFirma k) {
 		if(sprawdzKlientaFirma(k.imie, k.nazwisko, k.getDataUrodzenia(), k.adres,
 				k.tel, k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
