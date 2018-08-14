@@ -13,7 +13,7 @@ public abstract class Pojazd {
 
     static int licznikIdPoj=0;
     public static ArrayList<Pojazd> listaPojazdow = new ArrayList<Pojazd>();
-    public Pojazd(int id, String marka, String model, int rokProdukcji, int iloscMiejsc){
+    public Pojazd(String marka, String model, int rokProdukcji, int iloscMiejsc){
         this.id=licznikIdPoj;
         ++licznikIdPoj;
         this.marka=marka;

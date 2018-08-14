@@ -9,8 +9,8 @@ public abstract class PojazdSpalinowy extends Pojazd {
     private int moc;
     private int pojemnoscSilnika;
     
-    public PojazdSpalinowy(int id, String marka, String model, int rokProdukcji, int iloscMiejsc, String nrRej, String vin, int moc, int pojemnoscSilnika) {
-        super(id, marka, model, rokProdukcji, iloscMiejsc);
+    public PojazdSpalinowy(String marka, String model, int rokProdukcji, int iloscMiejsc, String nrRej, String vin, int moc, int pojemnoscSilnika) {
+        super(marka, model, rokProdukcji, iloscMiejsc);
         this.nrRej=nrRej;
         this.vin=vin;
         this.moc=moc;

@@ -9,16 +9,39 @@ public class Samochod extends PojazdSpalinowy {
     
 
     
-    public Samochod(int id, String marka, String model, int rokProdukcji, int iloscMiejsc, 
+    public Samochod(String marka, String model, int rokProdukcji, int iloscMiejsc, 
                     String nrRej, String vin, int moc, int pojemnoscSilnika, 
                     TypNadwozia typNadwozia, int iloscDrzwi) {
-        super(id, marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika);
+        super(marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika);
         this.typNadwozia=typNadwozia;
         this.iloscDrzwi=iloscDrzwi;
+        
+        DataStore.storeSamochod(this);
     }
     
+    public boolean zmienSamochod(String marka, String model, int rokProdukcji, int iloscMiejsc, 
+            String nrRej, String vin, int moc, int pojemnoscSilnika, 
+            TypNadwozia typNadwozia, int iloscDrzwi) {
+    	if(DataStore.sprawdzSamochod(marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika,
+    			typNadwozia, iloscDrzwi)) {
+    		this.setMarka(marka);
+    		this.setModel(model);
+    		this.setRokProdukcji(rokProdukcji);
+    		this.setNrRej(nrRej);
+    		this.setVin(vin);
+    		this.setPojemnoscSilnika(pojemnoscSilnika);
+    		this.setTypNadwozia(typNadwozia);
+    		this.setIloscDrzwi(iloscDrzwi);
+    		
+    		return true;
+    	}
+    	
+    	return false;
+    }
+    
+    
     //gettery
-    public TypNadwozia getTyp(){
+    public TypNadwozia getTypNadwozia(){
         return typNadwozia;
     }
     public int getIloscDrzwi(){

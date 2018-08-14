@@ -45,7 +45,7 @@ public class KlientFirma extends Klient {
 	    	return true;
 		}
 		else return false;
-}
+	}
     
     
    
