@@ -30,7 +30,8 @@ public class Wypozyczalnia {
         KlientOsFizyczna klient1=new KlientOsFizyczna("Kamil", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
         				"Dzika 12","384294123", "AXZ123345");
         
-       
+        Rezerwacja rez1 = new Rezerwacja(LocalDate.parse("2018 07 12",formatDaty), LocalDate.parse("2018 07 13",formatDaty), klient1,
+                mot6, 150, StatusRezerwacji.PLANOWANA);
        
         
         

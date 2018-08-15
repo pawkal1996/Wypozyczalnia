@@ -34,6 +34,38 @@ public class DataStore{
 		}
 	}
 	
+	public static void storeRower(Rower p) {
+		if(sprawdzRower(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), p.getTypRoweru())) {
+			db.zapiszPojazd(p);
+		}
+	}
+	
+	public static void storeRezerwacja(Rezerwacja r) {
+		if(sprawdzRezerwacje(r.getIdRezerwacji(), r.getDataStartu(), r.getDataKonca(), r.getKlient(), r.getPojazd(),
+				r.getKosztRezerwacji(), r.getStatusRezerwacji()))
+			db.zapiszRezerwacje(r);
+			
+		
+	
+	}
+	
+	public static boolean sprawdzRezerwacje(int idRezerwacji, LocalDate dataStartu, LocalDate dataKonca, Klient klient,
+            Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
+        if(dataStartu.isAfter(dataKonca)){
+            return false;
+        }
+        return true;
+    }
+	
+	public static boolean sprawdzRower(String marka, String model, int rokProdukcji, int iloscMiejsc,
+                TypRoweru typRoweru) {
+			LocalDate teraz = LocalDate.now();
+			if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
+				return false;
+			}
+			return true;
+	}
+	
 	public static boolean sprawdzMotocykl(String marka, String model, int rokProdukcji, int iloscMiejsc, 
             String nrRej, String vin, int moc, int pojemnoscSilnika, 
             TypMotocykla typMotocykla, NapedMotocykla napedMotocykla) {

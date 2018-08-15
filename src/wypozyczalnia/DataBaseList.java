@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class DataBaseList {
 	private static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
 	private static ArrayList<Pojazd> listaPojazd = new ArrayList<Pojazd>();
+	private static ArrayList<Rezerwacja> listaRezerwacja = new ArrayList<Rezerwacja>();
 	
 	public boolean zapiszKlienta(Klient klient) {
 		listaKlient.add(klient);
@@ -15,6 +16,12 @@ public class DataBaseList {
 	public boolean zapiszPojazd(Pojazd pojazd) {
 		listaPojazd.add(pojazd);
 		System.out.println("Dodano pojazd "+pojazd.getId()+" "+pojazd.getMarka()+" "+pojazd.getModel());
+		return true;
+	}
+	
+	public boolean zapiszRezerwacje(Rezerwacja r) {
+		listaRezerwacja.add(r);
+		System.out.println("Dodano rezerwacje nr "+r.getIdRezerwacji());
 		return true;
 	}
 	

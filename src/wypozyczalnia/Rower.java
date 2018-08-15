@@ -6,13 +6,18 @@ public class Rower extends Pojazd {
     public Rower(String marka, String model, int rokProdukcji, int iloscMiejsc,
                 TypRoweru typRoweru) {
         super(marka, model, rokProdukcji, iloscMiejsc);
-        this.typRoweru=typRoweru;      
+        this.typRoweru=typRoweru; 
+        DataStore.storeRower(this);
     }
     
-    public static boolean dodajRower(String marka, String model, int rokProdukcji,
-    		int iloscMiejsc, TypRoweru typRoweru) {
-    	int a=2;
-    	if(a>3) {
+    public boolean zmienRower(String marka, String model, int rokProdukcji, int iloscMiejsc,
+                TypRoweru typRoweru) {
+    	if(DataStore.sprawdzRower(marka, model, rokProdukcji, iloscMiejsc, typRoweru)) {
+    		this.setMarka(marka);
+    		this.setModel(model);
+    		this.setRokProdukcji(rokProdukcji);
+    		this.setIloscMiejsc(iloscMiejsc);
+    		this.setTypRoweru(typRoweru);
     		return true;
     	}
     	return false;
