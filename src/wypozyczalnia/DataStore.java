@@ -73,6 +73,9 @@ public class DataStore{
 			if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 				return false;
 			}
+			if(!nrRej.matches("[A-Z]{2,3}[A-Z0-9]{4,5}")) {
+				return false;
+			}
 
 			if(iloscMiejsc<0) {
 				return false;
@@ -89,7 +92,12 @@ public class DataStore{
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
-		
+		if(!nrRej.matches("[A-Z]{2,3}[A-Z0-9]{4,5}")) {
+			return false;
+		}
+		if(!vin.matches("[A-Z0-9]{17}")) {
+			return false;
+		}
 		if(iloscMiejsc<0) {
 			return false;
 		}
