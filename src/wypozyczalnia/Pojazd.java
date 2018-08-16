@@ -1,5 +1,6 @@
 package wypozyczalnia;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,8 @@ public abstract class Pojazd {
     	return ++licznikIdPoj;
     }   
 
+    
+    
     //gettery
     public int getId(){
         return id;

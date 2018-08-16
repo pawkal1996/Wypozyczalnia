@@ -55,4 +55,8 @@ public class DataBaseList {
 		return listaPojazd;
 	}
 	
+	public ArrayList<Rezerwacja> getListaRezerwacja(){
+		return listaRezerwacja;
+	}
+	
 }
