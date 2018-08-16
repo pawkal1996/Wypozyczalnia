@@ -12,10 +12,8 @@ public abstract class Pojazd {
     private int iloscMiejsc;
 
     static int licznikIdPoj=0;
-    public static ArrayList<Pojazd> listaPojazdow = new ArrayList<Pojazd>();
     public Pojazd(String marka, String model, int rokProdukcji, int iloscMiejsc){
         this.id=licznikIdPoj;
-        ++licznikIdPoj;
         this.marka=marka;
         this.model=model;
         this.rokProdukcji=rokProdukcji;
@@ -24,10 +22,9 @@ public abstract class Pojazd {
     
     
     
-   
-    
-
-    
+    public static int zwiekszId() {
+    	return ++licznikIdPoj;
+    }   
 
     //gettery
     public int getId(){
@@ -61,18 +58,6 @@ public abstract class Pojazd {
     }
     public void setIloscMiejsc(int iloscMiejsc){
         this.iloscMiejsc=iloscMiejsc;
-    }
-
-    public static void wyswietl(){
-        
-        for (Pojazd i : listaPojazdow) {
-            System.out.println(i.getMarka());
-        } 
-    }
-    
-    public static void dodajPojazd(Pojazd pojazd){
-        listaPojazdow.add(pojazd);
-    }
-        
+    }  
         
 }

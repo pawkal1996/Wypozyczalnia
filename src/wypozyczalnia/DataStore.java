@@ -9,11 +9,13 @@ public class DataStore{
 	public static void storeKlientFirma(KlientFirma k) {
 		if(sprawdzKlientaFirma(k.imie, k.nazwisko, k.getDataUrodzenia(), k.adres,
 				k.tel, k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
+			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
 	}
 	public static void storeKlientOsFizyczna(KlientOsFizyczna k) {
 		if(sprawdzKlientaOsFizyczna(k.imie,k.nazwisko,k.getDataUrodzenia(),k.adres,k.tel,k.getNumerDowodu())){
+			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
 	}
@@ -22,6 +24,7 @@ public class DataStore{
 		if(sprawdzSamochod(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), 
                 p.getNrRej(), p.getVin(), p.getMoc(), p.getPojemnoscSilnika(), 
                 p.getTypNadwozia(), p.getIloscDrzwi())){
+			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
 	}
@@ -30,28 +33,40 @@ public class DataStore{
 		if(sprawdzMotocykl(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), 
                 p.getNrRej(), p.getVin(), p.getMoc(), p.getPojemnoscSilnika(),p.getTypMotocykla(),
                 p.getNapedMotocykla())) {
+			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
 	}
 	
 	public static void storeRower(Rower p) {
 		if(sprawdzRower(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), p.getTypRoweru())) {
+			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
 	}
 	
 	public static void storeRezerwacja(Rezerwacja r) {
 		if(sprawdzRezerwacje(r.getIdRezerwacji(), r.getDataStartu(), r.getDataKonca(), r.getKlient(), r.getPojazd(),
-				r.getKosztRezerwacji(), r.getStatusRezerwacji()))
+				r.getKosztRezerwacji(), r.getStatusRezerwacji())) {
+			r.getKlient().setIloscRezerwacji(r.getKlient().getIloscRezerwacji()+1);
+			Rezerwacja.zwiekszIdRezerwacji();
 			db.zapiszRezerwacje(r);
-			
+		}
 		
 	
 	}
 	
 	public static boolean sprawdzRezerwacje(int idRezerwacji, LocalDate dataStartu, LocalDate dataKonca, Klient klient,
             Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
-        if(dataStartu.isAfter(dataKonca)){
+        if(!czyIstniejeKlient(klient)) {
+        	return false;
+        }
+        
+        if(!czyIstniejePojazd(pojazd)) {
+        	return false;
+        }
+        
+		if(dataStartu.isAfter(dataKonca)){
             return false;
         }
         return true;
@@ -74,6 +89,10 @@ public class DataStore{
 				return false;
 			}
 			if(!nrRej.matches("[A-Z]{2,3}[A-Z0-9]{4,5}")) {
+				return false;
+			}
+			
+			if(!vin.matches("[A-Z0-9]{17}")) {
 				return false;
 			}
 
@@ -124,18 +143,6 @@ public class DataStore{
 		 return true;
 	 }
 
-	 public static boolean dodajKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-			 String tel, String nazwaFirmy, String nipFirmy, String adresFirmy) {
-		 if(sprawdzKlientaFirma(imie,nazwisko,dataUrodzenia,adres,tel,nazwaFirmy,nipFirmy,adresFirmy)) {
-			 KlientFirma klient = new KlientFirma(imie,nazwisko,dataUrodzenia,adres,
-               tel, nazwaFirmy, nipFirmy, adresFirmy);
-	     db.zapiszKlienta(klient);
-		 return true;
-		 }
-		 else return false;
-	
-	 }
-
 	 public static boolean sprawdzKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
 	            String tel, String numerDowodu){
 	 
@@ -157,16 +164,21 @@ public class DataStore{
 	    	return true;
 	 }
 	 
-	 public static boolean dodajKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-	            String tel, String numerDowodu) {
-	    	if(sprawdzKlientaOsFizyczna(imie,nazwisko,dataUrodzenia,adres,tel,numerDowodu)) {
-	    		KlientOsFizyczna klient = new KlientOsFizyczna(imie,nazwisko,dataUrodzenia,adres,
-	    	            tel,numerDowodu);
-	    		db.zapiszKlienta(klient);
-	  
-	    	    return true;
-	    	}
-	    	else return false;
-	    }
-
+	 public static boolean czyIstniejeKlient(Klient k) {
+			for(Klient i : db.getListaKlient()) {
+				if(i.equals(k)) {
+					return true;
+				}
+			}
+			return false;
+	 }
+	 
+	 public static boolean czyIstniejePojazd(Pojazd p) {
+			for(Pojazd i : db.getListaPojazd()) {
+				if(i.equals(p)) {
+					return true;
+				}
+			}
+			return false;
+	 }
 }

@@ -28,7 +28,6 @@ public class Rezerwacja {
                       Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
         
         this.idRezerwacji=licznikId;
-        ++licznikId;
         this.dataStartu=dataStartu;
         this.dataKonca=dataKonca;
         this.klient=klient;
@@ -38,6 +37,10 @@ public class Rezerwacja {
         DataStore.storeRezerwacja(this);
     }
     
+    
+    public static int zwiekszIdRezerwacji() {
+    	return ++licznikId;
+    }
     
     public int getIdRezerwacji(){
         return idRezerwacji;
@@ -78,4 +81,5 @@ public class Rezerwacja {
     public void setStatusRezerwacji(StatusRezerwacji statusRezerwacji){
         this.statusRezerwacji=statusRezerwacji;
     }
+   
 }

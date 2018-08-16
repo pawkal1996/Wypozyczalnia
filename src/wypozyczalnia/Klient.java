@@ -16,7 +16,7 @@ import java.util.Date;
  */
 public abstract class Klient extends Osoba {
         private static int idKlienta;
-        private int iloscRezerwacji;
+        private int iloscRezerwacji=0;
         private LocalDate dataRejestracji;
         
         static int licznikIdKlienta;
@@ -27,16 +27,16 @@ public abstract class Klient extends Osoba {
             super(imie, nazwisko, dataUrodzenia, adres, tel);
                 
             this.idKlienta=licznikIdKlienta;
-            ++licznikIdKlienta;
-            this.iloscRezerwacji=iloscRezerwacji;
             this.dataRejestracji = LocalDate.now();
                       
         }
 
+        public static int zwiekszIdKlienta() {
+        	return ++licznikIdKlienta;
+        }
         
         
         
-        //public abstract void dodajKlienta();
         
         //gettery
         public int getIdKlienta(){

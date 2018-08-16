@@ -26,6 +26,12 @@ public class DataBaseList {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
 	public static void wyswietlKlientow() {
 		
 		for (Klient i : listaKlient) {
@@ -40,4 +46,13 @@ public class DataBaseList {
 	 		}
 	 	}
 	} 
+	
+	public ArrayList<Klient> getListaKlient(){
+		return listaKlient;
+	}
+	
+	public ArrayList<Pojazd> getListaPojazd(){
+		return listaPojazd;
+	}
+	
 }
