@@ -189,30 +189,10 @@ public class DataStore{
 	 public static boolean czyPojazdWolny(Pojazd p, LocalDate dataStartu, LocalDate dataKonca) {
 	    	for (Rezerwacja i : db.getListaRezerwacja() ) {
 	    		if(i.getPojazd().equals(p)) {
-	    			if((i.getDataStartu().isBefore(dataStartu))&&(i.getDataKonca().isAfter(dataKonca))) {
+	    			//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do
+	    			if((dataStartu.isBefore(i.getDataKonca())) &&(i.getDataStartu().isBefore(dataKonca))) {
 	    				return false;
-	    			}
-	    			if((i.getDataStartu().isAfter(dataStartu))&&(i.getDataKonca().isBefore(dataKonca))) {
-	    				return false;
-	    			}
-	    			if((i.getDataStartu().isBefore(dataStartu))&&(i.getDataKonca().isAfter(dataStartu))) {
-	    				return false;
-	    			}
-	    			if((i.getDataStartu().isAfter(dataStartu))&&(i.getDataStartu().isAfter(dataKonca))) {
-	    				return false;
-	    			}
-	    			if((i.getDataStartu().isEqual(dataStartu))&&(i.getDataStartu().isAfter(dataKonca))) {
-	    				return false;
-	    			}
-	    			if((i.getDataStartu().isBefore(dataStartu))&&(i.getDataKonca().isEqual(dataKonca))) {
-	    				return false;
-	    			}
-	    			if((i.getDataStartu().isEqual(dataStartu))&&(i.getDataKonca().isBefore(dataKonca))) {
-	    				return false;
-	    			}
-	    			if((i.getDataStartu().isAfter(dataStartu))&&(i.getDataKonca().isEqual(dataKonca))) {
-	    				return false;
-	    			}
+	    			}   				
 	    			
 	    			
 	    		}
