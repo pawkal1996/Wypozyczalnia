@@ -1,8 +1,9 @@
 package wypozyczalnia;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class DataBaseList {
+public class DataBaseList implements StoreDriver{
 	private static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
 	private static ArrayList<Pojazd> listaPojazd = new ArrayList<Pojazd>();
 	private static ArrayList<Rezerwacja> listaRezerwacja = new ArrayList<Rezerwacja>();
@@ -24,8 +25,39 @@ public class DataBaseList {
 		System.out.println("Dodano rezerwacje nr "+r.getIdRezerwacji());
 		return true;
 	}
-	
-	
+	//doklejone 3 metody
+	 public static boolean czyIstniejeKlient(Klient k) {
+			for(Klient i : listaKlient) {
+				if(i.equals(k)) {
+					return true;
+				}
+			}
+			return false;
+	 }
+	 
+	 public static boolean czyIstniejePojazd(Pojazd p) {
+			for(Pojazd i : listaPojazd) {
+				if(i.equals(p)) {
+					return true;
+				}
+			}
+			return false;
+	 }
+	 
+	 public boolean czyPojazdWolny(LocalDate dataStartu, LocalDate dataKonca) {
+	    	for (Rezerwacja i : listaRezerwacja) {
+	    		if(i.getPojazd().equals(this)) {
+	    			//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do
+	    			if((dataStartu.isBefore(i.getDataKonca())) &&(i.getDataStartu().isBefore(dataKonca))) {
+	    				return false;
+	    			}   				
+	    			
+	    			
+	    		}
+	    		return true;
+	    	}
+	    	return true;
+	 }	
 	
 	
 	

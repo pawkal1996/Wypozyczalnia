@@ -70,7 +70,7 @@ public class DataStore{
             return false;
         }
 		
-		if(!czyPojazdWolny(pojazd, dataStartu, dataKonca)) {
+		if(!pojazd.czyPojazdWolny(dataStartu, dataKonca)) {
 			return false;
 		} 
         return true;
@@ -168,36 +168,5 @@ public class DataStore{
 	    	return true;
 	 }
 	 
-	 public static boolean czyIstniejeKlient(Klient k) {
-			for(Klient i : db.getListaKlient()) {
-				if(i.equals(k)) {
-					return true;
-				}
-			}
-			return false;
-	 }
-	 
-	 public static boolean czyIstniejePojazd(Pojazd p) {
-			for(Pojazd i : db.getListaPojazd()) {
-				if(i.equals(p)) {
-					return true;
-				}
-			}
-			return false;
-	 }
-	 
-	 public static boolean czyPojazdWolny(Pojazd p, LocalDate dataStartu, LocalDate dataKonca) {
-	    	for (Rezerwacja i : db.getListaRezerwacja() ) {
-	    		if(i.getPojazd().equals(p)) {
-	    			//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do
-	    			if((dataStartu.isBefore(i.getDataKonca())) &&(i.getDataStartu().isBefore(dataKonca))) {
-	    				return false;
-	    			}   				
-	    			
-	    			
-	    		}
-	    		return true;
-	    	}
-	    	return true;
-	 }
+
 }
