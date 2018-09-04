@@ -2,6 +2,7 @@ package wypozyczalnia;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class DataStore{
 	private static DataBaseList db = new DataBaseList();
@@ -70,9 +71,13 @@ public class DataStore{
             return false;
         }
 		*/
-		if(!pojazd.czyPojazdWolny(dataStartu, dataKonca)) {
-			return false;
-		} 
+		ArrayList<Rezerwacja> tmpList = db.getListaRezerwacji(pojazd);
+		
+		for(Rezerwacja i : tmpList) {	
+			if(!i.czyPojazdWolny(dataStartu, dataKonca)) {
+				return false;
+			} 
+		}
         return true;
     }
 	

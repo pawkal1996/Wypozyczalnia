@@ -35,7 +35,7 @@ public class DataBaseList implements StoreDriver{
     	}
     	return listaRez;
     }
-	//doklejone 3 metody
+	
 	 public static boolean czyIstniejeKlient(Klient k) {
 			for(Klient i : listaKlient) {
 				if(i.equals(k)) {

@@ -33,7 +33,7 @@ public class Wypozyczalnia {
         
         Rezerwacja rez1  =new Rezerwacja(LocalDate.parse("2018 07 14",formatDaty), LocalDate.parse("2018 07 15",formatDaty), klient,
                 mot3, 150, StatusRezerwacji.PLANOWANA);
-        Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 11",formatDaty), LocalDate.parse("2018 07 18",formatDaty), klient1,
+        Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
                 mot3, 150, StatusRezerwacji.PLANOWANA);
         
         System.out.println(klient.getNazwisko()+ " ma "+klient.getIloscRezerwacji()+" rezerwacji");

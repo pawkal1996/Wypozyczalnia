@@ -4,5 +4,5 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public interface StoreDriver {
-	public ArrayList<Rezerwacja> getRezerwacja(Pojazd pojazdSprawdzany);
+	public ArrayList<Rezerwacja> getListaRezerwacji(Pojazd pojazdSprawdzany);
 }
