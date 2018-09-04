@@ -21,7 +21,20 @@ public abstract class Pojazd {
         this.iloscMiejsc=iloscMiejsc;
     }
     
-    
+    public boolean czyPojazdWolny(LocalDate dataStartu, LocalDate dataKonca) {
+    	for (Rezerwacja i : listaRezerwacja) {
+    		if(i.getPojazd().equals(this)) {
+    			//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do
+    			if((dataStartu.isBefore(i.getDataKonca())) &&(i.getDataStartu().isBefore(dataKonca))) {
+    				return false;
+    			}   				
+    			
+    			
+    		}
+    		return true;
+    	}
+    	return true;
+ }	
     
     public static int zwiekszId() {
     	return ++licznikIdPoj;

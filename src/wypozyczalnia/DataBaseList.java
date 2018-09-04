@@ -44,20 +44,7 @@ public class DataBaseList implements StoreDriver{
 			return false;
 	 }
 	 
-	 public boolean czyPojazdWolny(LocalDate dataStartu, LocalDate dataKonca) {
-	    	for (Rezerwacja i : listaRezerwacja) {
-	    		if(i.getPojazd().equals(this)) {
-	    			//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do
-	    			if((dataStartu.isBefore(i.getDataKonca())) &&(i.getDataStartu().isBefore(dataKonca))) {
-	    				return false;
-	    			}   				
-	    			
-	    			
-	    		}
-	    		return true;
-	    	}
-	    	return true;
-	 }	
+	 
 	
 	
 	
