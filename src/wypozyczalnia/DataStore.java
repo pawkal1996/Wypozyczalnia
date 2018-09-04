@@ -58,7 +58,7 @@ public class DataStore{
 	
 	public static boolean sprawdzRezerwacje(int idRezerwacji, LocalDate dataStartu, LocalDate dataKonca, Klient klient,
             Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
-        if(!czyIstniejeKlient(klient)) {
+        /*if(!czyIstniejeKlient(klient)) {
         	return false;
         }
         
@@ -69,7 +69,7 @@ public class DataStore{
 		if(dataStartu.isAfter(dataKonca)){
             return false;
         }
-		
+		*/
 		if(!pojazd.czyPojazdWolny(dataStartu, dataKonca)) {
 			return false;
 		} 

@@ -37,6 +37,16 @@ public class Rezerwacja {
         DataStore.storeRezerwacja(this);
     }
     
+    public boolean czyPojazdWolny(LocalDate dataStartu, LocalDate dataKonca) {
+    	
+		//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do
+		if((dataStartu.isBefore(this.getDataKonca())) &&(this.getDataStartu().isBefore(dataKonca))) {
+			return false;
+		}   				
+	
+
+		return true;
+    }
     
     public static int zwiekszIdRezerwacji() {
     	return ++licznikId;

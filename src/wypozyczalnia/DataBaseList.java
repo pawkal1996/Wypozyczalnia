@@ -25,6 +25,10 @@ public class DataBaseList implements StoreDriver{
 		System.out.println("Dodano rezerwacje nr "+r.getIdRezerwacji());
 		return true;
 	}
+	
+	public Rezerwacja getRezerwacja(Pojazd pojazdSprawdzany) {
+		
+	}
 	//doklejone 3 metody
 	 public static boolean czyIstniejeKlient(Klient k) {
 			for(Klient i : listaKlient) {
