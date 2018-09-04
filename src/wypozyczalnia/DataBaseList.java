@@ -26,9 +26,15 @@ public class DataBaseList implements StoreDriver{
 		return true;
 	}
 	
-	public Rezerwacja getRezerwacja(Pojazd pojazdSprawdzany) {
-		
-	}
+	public ArrayList<Rezerwacja> getListaRezerwacji(Pojazd p) {
+		ArrayList<Rezerwacja> listaRez = new ArrayList<Rezerwacja>();
+    	for (Rezerwacja i : listaRezerwacja) {
+    		if(i.getPojazd().equals(p)) {
+                        listaRez.add(i);	
+    		}
+    	}
+    	return listaRez;
+    }
 	//doklejone 3 metody
 	 public static boolean czyIstniejeKlient(Klient k) {
 			for(Klient i : listaKlient) {
