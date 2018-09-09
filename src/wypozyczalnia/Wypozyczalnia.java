@@ -36,10 +36,13 @@ public class Wypozyczalnia {
         Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
                 mot3, 150, StatusRezerwacji.PLANOWANA);
         
+        Cennik.inicjalizacjaCennika();
+        
         System.out.println(klient.getNazwisko()+ " ma "+klient.getIloscRezerwacji()+" rezerwacji");
         System.out.println(klient1.getNazwisko()+ " ma "+klient1.getIloscRezerwacji()+" rezerwacji");
         System.out.println(rez1.obliczKosztRezerwacji());
         System.out.println(rez2.obliczKosztRezerwacji());
+        
         
         
     }        

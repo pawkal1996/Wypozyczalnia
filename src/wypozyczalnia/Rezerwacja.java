@@ -43,8 +43,12 @@ public class Rezerwacja {
     }
     
     public int obliczKosztRezerwacji() {
-    
-    	return (int)ChronoUnit.DAYS.between(this.dataStartu,this.dataKonca)*50;
+    	int iloscDni = (int)ChronoUnit.DAYS.between(this.dataStartu,this.dataKonca);
+    	if(this.pojazd instanceof Samochod) {
+    	Samochod car=(Samochod)this.pojazd;
+    	SegmentSamochodu segmentTmp = car.getSegmentSamochodu();
+    	return iloscDni*Cennik.cena[SegmentSamochodu.segmentTmp.getValue()];}
+    	return 0;
     	
     }
     public boolean czyPojazdWolny(LocalDate dataStartu, LocalDate dataKonca) {

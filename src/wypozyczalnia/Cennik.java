@@ -1,13 +1,14 @@
 package wypozyczalnia;
 
 public class Cennik{
-	int[] cena = new int[5];
+	static int[] cena = new int[5];
+	public static void inicjalizacjaCennika() {
 	cena[SegmentSamochodu.A.getValue()]=90;
 	cena[SegmentSamochodu.B.getValue()]=125;
 	cena[SegmentSamochodu.C.getValue()]=150;
 	cena[SegmentSamochodu.D.getValue()]=190;
 	cena[SegmentSamochodu.E.getValue()]=250;
-	
+	}
 
 }
 
