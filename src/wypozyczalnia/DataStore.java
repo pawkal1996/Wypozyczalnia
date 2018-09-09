@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+
+
 public class DataStore{
 	private static DataBaseList db = new DataBaseList();
 	
@@ -24,7 +26,7 @@ public class DataStore{
 	public static void storeSamochod(Samochod p) {
 		if(sprawdzSamochod(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), 
                 p.getNrRej(), p.getVin(), p.getMoc(), p.getPojemnoscSilnika(), 
-                p.getTypNadwozia(), p.getIloscDrzwi())){
+                p.getTypNadwozia(), p.getIloscDrzwi(), p.getSegmentSamochodu())){
 			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
@@ -59,18 +61,18 @@ public class DataStore{
 	
 	public static boolean sprawdzRezerwacje(int idRezerwacji, LocalDate dataStartu, LocalDate dataKonca, Klient klient,
             Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
-        /*if(!czyIstniejeKlient(klient)) {
+        if(!db.czyIstniejeKlient(klient)) {
         	return false;
         }
         
-        if(!czyIstniejePojazd(pojazd)) {
+        if(!db.czyIstniejePojazd(pojazd)) {
         	return false;
         }
         
 		if(dataStartu.isAfter(dataKonca)){
             return false;
         }
-		*/
+		
 		ArrayList<Rezerwacja> tmpList = db.getListaRezerwacji(pojazd);
 		
 		for(Rezerwacja i : tmpList) {	
@@ -115,7 +117,7 @@ public class DataStore{
 	
 	public static boolean sprawdzSamochod(String marka, String model, int rokProdukcji, int iloscMiejsc, 
                     String nrRej, String vin, int moc, int pojemnoscSilnika, 
-                    TypNadwozia typNadwozia, int iloscDrzwi) {
+                    TypNadwozia typNadwozia, int iloscDrzwi, SegmentSamochodu segment) {
 		LocalDate teraz = LocalDate.now();
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;

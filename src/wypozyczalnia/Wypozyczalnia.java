@@ -15,11 +15,11 @@ public class Wypozyczalnia {
          
         DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
         
-        Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5);
-        Samochod mot2 = new Samochod("Nissan", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5);
-        Samochod mot3 = new Samochod("Ferrari", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5);
-        Samochod mot4 = new Samochod("Fiat", "Astra", 25, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5);
-        Samochod mot5 = new Samochod("Kamaz", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5);
+        Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+        Samochod mot2 = new Samochod("Nissan", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+        Samochod mot3 = new Samochod("Ferrari", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+        Samochod mot4 = new Samochod("Fiat", "Astra", 25, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+        Samochod mot5 = new Samochod("Kamaz", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
         Motocykl mot6 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
         Motocykl mot7 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
         Motocykl mot8 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);

@@ -7,11 +7,11 @@ public class Samochod extends PojazdSpalinowy {
     int iloscDrzwi;
     TypNadwozia typNadwozia;
     
-
+    SegmentSamochodu segment;
     
     public Samochod(String marka, String model, int rokProdukcji, int iloscMiejsc, 
                     String nrRej, String vin, int moc, int pojemnoscSilnika, 
-                    TypNadwozia typNadwozia, int iloscDrzwi) {
+                    TypNadwozia typNadwozia, int iloscDrzwi, SegmentSamochodu segment) {
         super(marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika);
         this.typNadwozia=typNadwozia;
         this.iloscDrzwi=iloscDrzwi;
@@ -23,7 +23,7 @@ public class Samochod extends PojazdSpalinowy {
             String nrRej, String vin, int moc, int pojemnoscSilnika, 
             TypNadwozia typNadwozia, int iloscDrzwi) {
     	if(DataStore.sprawdzSamochod(marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika,
-    			typNadwozia, iloscDrzwi)) {
+    			typNadwozia, iloscDrzwi, segment)) {
     		this.setMarka(marka);
     		this.setModel(model);
     		this.setRokProdukcji(rokProdukcji);
@@ -47,6 +47,9 @@ public class Samochod extends PojazdSpalinowy {
     public int getIloscDrzwi(){
         return iloscDrzwi;
     }
+    public SegmentSamochodu getSegmentSamochodu() {
+    	return segment;
+    }
     //settery
     public void setTypNadwozia(TypNadwozia typNadwozia){
         this.typNadwozia=typNadwozia;
@@ -54,7 +57,9 @@ public class Samochod extends PojazdSpalinowy {
     public void setIloscDrzwi(int iloscDrzwi){
         this.iloscDrzwi=iloscDrzwi;
     }
-
+    public void setSegmentSamochodu(SegmentSamochodu segment) {
+    	this.segment=segment;
+    }
 
 
     

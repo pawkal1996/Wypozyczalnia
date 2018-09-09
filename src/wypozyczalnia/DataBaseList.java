@@ -36,7 +36,7 @@ public class DataBaseList implements StoreDriver{
     	return listaRez;
     }
 	
-	 public static boolean czyIstniejeKlient(Klient k) {
+	 public boolean czyIstniejeKlient(Klient k) {
 			for(Klient i : listaKlient) {
 				if(i.equals(k)) {
 					return true;
@@ -45,7 +45,7 @@ public class DataBaseList implements StoreDriver{
 			return false;
 	 }
 	 
-	 public static boolean czyIstniejePojazd(Pojazd p) {
+	 public boolean czyIstniejePojazd(Pojazd p) {
 			for(Pojazd i : listaPojazd) {
 				if(i.equals(p)) {
 					return true;
