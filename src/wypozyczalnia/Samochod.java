@@ -1,20 +1,21 @@
 package wypozyczalnia;
 
-
+import java.time.LocalDate;
 
 public class Samochod extends PojazdSpalinowy {
     
     int iloscDrzwi;
     TypNadwozia typNadwozia;
-    
-    SegmentSamochodu segment;
+    int cenaZaDobe;
+    SegmentSamochodu segmentSamochodu;
     
     public Samochod(String marka, String model, int rokProdukcji, int iloscMiejsc, 
                     String nrRej, String vin, int moc, int pojemnoscSilnika, 
-                    TypNadwozia typNadwozia, int iloscDrzwi, SegmentSamochodu segment) {
+                    TypNadwozia typNadwozia, int iloscDrzwi, SegmentSamochodu segmentSamochodu) {
         super(marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika);
         this.typNadwozia=typNadwozia;
         this.iloscDrzwi=iloscDrzwi;
+        this.segmentSamochodu=segmentSamochodu;
         
         DataStore.storeSamochod(this);
     }
@@ -23,7 +24,7 @@ public class Samochod extends PojazdSpalinowy {
             String nrRej, String vin, int moc, int pojemnoscSilnika, 
             TypNadwozia typNadwozia, int iloscDrzwi) {
     	if(DataStore.sprawdzSamochod(marka, model, rokProdukcji, iloscMiejsc, nrRej, vin, moc, pojemnoscSilnika,
-    			typNadwozia, iloscDrzwi, segment)) {
+    			typNadwozia, iloscDrzwi, segmentSamochodu)) {
     		this.setMarka(marka);
     		this.setModel(model);
     		this.setRokProdukcji(rokProdukcji);
@@ -39,6 +40,7 @@ public class Samochod extends PojazdSpalinowy {
     	return false;
     }
     
+  
     
     //gettery
     public TypNadwozia getTypNadwozia(){
@@ -48,7 +50,7 @@ public class Samochod extends PojazdSpalinowy {
         return iloscDrzwi;
     }
     public SegmentSamochodu getSegmentSamochodu() {
-    	return segment;
+    	return segmentSamochodu;
     }
     //settery
     public void setTypNadwozia(TypNadwozia typNadwozia){
@@ -57,9 +59,11 @@ public class Samochod extends PojazdSpalinowy {
     public void setIloscDrzwi(int iloscDrzwi){
         this.iloscDrzwi=iloscDrzwi;
     }
-    public void setSegmentSamochodu(SegmentSamochodu segment) {
-    	this.segment=segment;
+    public void setSegmentSamochodu(SegmentSamochodu segmentSamochodu) {
+    	this.segmentSamochodu=segmentSamochodu;
     }
+
+	
 
 
     

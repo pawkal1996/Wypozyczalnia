@@ -6,6 +6,7 @@
 package wypozyczalnia;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,6 +25,8 @@ public class Rezerwacja {
     private StatusRezerwacji statusRezerwacji;
     public static ArrayList<Rezerwacja> listaRezerwacji = new ArrayList<Rezerwacja>();
     static int licznikId=0;
+    
+    long dlugosc;
     public Rezerwacja(LocalDate dataStartu, LocalDate dataKonca, Klient klient,
                       Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
         
@@ -34,9 +37,16 @@ public class Rezerwacja {
         this.pojazd=pojazd;
         this.kosztRezerwacji=kosztRezerwacji;
         this.statusRezerwacji=statusRezerwacji;
+        this.dlugosc= ChronoUnit.DAYS.between(dataStartu,dataKonca);
         DataStore.storeRezerwacja(this);
+        
     }
     
+    public int obliczKosztRezerwacji() {
+    
+    	return (int)ChronoUnit.DAYS.between(this.dataStartu,this.dataKonca)*50;
+    	
+    }
     public boolean czyPojazdWolny(LocalDate dataStartu, LocalDate dataKonca) {
     	
 		//Od<=pojazd.getdataKonca()  && pojazd.getDataStartu()<=Do

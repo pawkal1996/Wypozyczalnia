@@ -48,6 +48,7 @@ public class DataStore{
 		}
 	}
 	
+	
 	public static void storeRezerwacja(Rezerwacja r) {
 		if(sprawdzRezerwacje(r.getIdRezerwacji(), r.getDataStartu(), r.getDataKonca(), r.getKlient(), r.getPojazd(),
 				r.getKosztRezerwacji(), r.getStatusRezerwacji())) {
@@ -58,6 +59,8 @@ public class DataStore{
 		
 	
 	}
+	
+	
 	
 	public static boolean sprawdzRezerwacje(int idRezerwacji, LocalDate dataStartu, LocalDate dataKonca, Klient klient,
             Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){

@@ -38,7 +38,8 @@ public class Wypozyczalnia {
         
         System.out.println(klient.getNazwisko()+ " ma "+klient.getIloscRezerwacji()+" rezerwacji");
         System.out.println(klient1.getNazwisko()+ " ma "+klient1.getIloscRezerwacji()+" rezerwacji");
-        
+        System.out.println(rez1.obliczKosztRezerwacji());
+        System.out.println(rez2.obliczKosztRezerwacji());
         
         
     }        

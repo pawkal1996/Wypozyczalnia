@@ -11,7 +11,6 @@ public abstract class Pojazd {
     private String model;
     private int rokProdukcji;
     private int iloscMiejsc;
-
     static int licznikIdPoj=0;
     public Pojazd(String marka, String model, int rokProdukcji, int iloscMiejsc){
         this.id=licznikIdPoj;
@@ -20,6 +19,7 @@ public abstract class Pojazd {
         this.rokProdukcji=rokProdukcji;
         this.iloscMiejsc=iloscMiejsc;
     }
+    
     
     	
     
