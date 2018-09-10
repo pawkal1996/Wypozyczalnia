@@ -1,13 +1,19 @@
 package wypozyczalnia;
 
 public class Cennik{
-	static int[] cena = new int[5];
+	static int[] cenaSamochodu = new int[5];
+	static int[] cenaMotocykla = new int[3];
 	public static void inicjalizacjaCennika() {
-	cena[SegmentSamochodu.A.getValue()]=90;
-	cena[SegmentSamochodu.B.getValue()]=125;
-	cena[SegmentSamochodu.C.getValue()]=150;
-	cena[SegmentSamochodu.D.getValue()]=190;
-	cena[SegmentSamochodu.E.getValue()]=250;
+		cenaSamochodu[SegmentSamochodu.A.getValue()]=90;
+		cenaSamochodu[SegmentSamochodu.B.getValue()]=125;
+		cenaSamochodu[SegmentSamochodu.C.getValue()]=150;
+		cenaSamochodu[SegmentSamochodu.D.getValue()]=190;
+		cenaSamochodu[SegmentSamochodu.E.getValue()]=250;
+		
+		cenaMotocykla[TypMotocykla.SZOSOWY.getValue()]=170;
+		cenaMotocykla[TypMotocykla.TURYSTYCZNY.getValue()]=190;
+		cenaMotocykla[TypMotocykla.SPORTOWY.getValue()]=290;
+		
 	}
 
 }
@@ -21,6 +27,20 @@ enum SegmentSamochodu {
 	
 	int value;
 	SegmentSamochodu(int value){
+		this.value=value;
+	}
+	int getValue() {
+		return value;
+	}
+}
+
+enum TypMotocykla {
+    SZOSOWY(0),
+    TURYSTYCZNY(1),
+    SPORTOWY(2);
+	
+	int value;
+	TypMotocykla(int value){
 		this.value=value;
 	}
 	int getValue() {

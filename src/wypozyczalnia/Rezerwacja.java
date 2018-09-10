@@ -47,7 +47,12 @@ public class Rezerwacja {
     	if(this.pojazd instanceof Samochod) {
     		Samochod car=(Samochod)this.pojazd;
     		SegmentSamochodu segmentTmp = car.getSegmentSamochodu();
-    		return iloscDni*Cennik.cena[segmentTmp.getValue()];
+    		return iloscDni*Cennik.cenaSamochodu[segmentTmp.getValue()];
+    	}
+    	if(this.pojazd instanceof Motocykl) {
+    		Motocykl moto=(Motocykl)this.pojazd;
+    		TypMotocykla typTmp=moto.getTypMotocykla();
+    		return iloscDni*Cennik.cenaMotocykla[typTmp.getValue()];
     	}
     	return 0;
     	
