@@ -28,7 +28,7 @@ public class Rezerwacja {
     
     long dlugosc;
     public Rezerwacja(LocalDate dataStartu, LocalDate dataKonca, Klient klient,
-                      Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){
+                      Pojazd pojazd, StatusRezerwacji statusRezerwacji){
         
         this.idRezerwacji=licznikId;
         this.dataStartu=dataStartu;
@@ -53,6 +53,11 @@ public class Rezerwacja {
     		Motocykl moto=(Motocykl)this.pojazd;
     		TypMotocykla typTmp=moto.getTypMotocykla();
     		return iloscDni*Cennik.cenaMotocykla[typTmp.getValue()];
+    	}
+    	if(this.pojazd instanceof Rower) {
+    		Rower rower=(Rower)this.pojazd;
+    		TypRoweru typTmp=rower.getTypRoweru();
+    		return iloscDni*Cennik.cenaRoweru[typTmp.getValue()];
     	}
     	return 0;
     	

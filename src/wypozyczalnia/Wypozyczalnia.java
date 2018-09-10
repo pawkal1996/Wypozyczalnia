@@ -32,9 +32,9 @@ public class Wypozyczalnia {
         				"Dzika 12","384294123", "AXZ123345");
         
         Rezerwacja rez1  =new Rezerwacja(LocalDate.parse("2018 07 14",formatDaty), LocalDate.parse("2018 07 15",formatDaty), klient,
-                mot1, 150, StatusRezerwacji.PLANOWANA);
+                rower, StatusRezerwacji.PLANOWANA);
         Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
-                mot3, 150, StatusRezerwacji.PLANOWANA);
+                mot3, StatusRezerwacji.PLANOWANA);
         
         Cennik.inicjalizacjaCennika();
         
