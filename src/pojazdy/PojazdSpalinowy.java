@@ -1,6 +1,5 @@
 
-package wypozyczalnia;
-
+package pojazdy;
 
 public abstract class PojazdSpalinowy extends Pojazd {
     

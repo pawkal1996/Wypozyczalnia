@@ -1,7 +1,9 @@
 package wypozyczalnia;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+
+import osoby.Klient;
+import pojazdy.Pojazd;
 
 public class DataBaseList implements StoreDriver{
 	private static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
@@ -53,28 +55,6 @@ public class DataBaseList implements StoreDriver{
 			}
 			return false;
 	 }
-	 
-	 
-	
-	
-	
-	
-	
-	
-	public static void wyswietlKlientow() {
-		
-		for (Klient i : listaKlient) {
-	 		if(i instanceof KlientOsFizyczna) {
-	 			KlientOsFizyczna klientTmp = (KlientOsFizyczna) i;
-	 			System.out.println(i.getIdKlienta()+" "+i.getImie()+" "+i.getNazwisko()+" "+i.getDataUrodzenia()+" " +i.getAdres()
-	 					+i.getTel()+" "+klientTmp.getNumerDowodu());
-	 		}
-	 		else {
-	 			KlientFirma klientTmp = (KlientFirma) i;
-	 			System.out.println("Tutaj to co chcemy wiedziec o firmach");
-	 		}
-	 	}
-	} 
 	
 	public ArrayList<Klient> getListaKlient(){
 		return listaKlient;

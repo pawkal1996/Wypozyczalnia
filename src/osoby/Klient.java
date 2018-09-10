@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package wypozyczalnia;
+package osoby;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -26,7 +24,7 @@ public abstract class Klient extends Osoba {
                       String tel){
             super(imie, nazwisko, dataUrodzenia, adres, tel);
                 
-            this.idKlienta=licznikIdKlienta;
+            Klient.idKlienta=licznikIdKlienta;
             this.dataRejestracji = LocalDate.now();
                       
         }

@@ -1,9 +1,4 @@
-package wypozyczalnia;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
+package pojazdy;
 
 public abstract class Pojazd {
     private int id;

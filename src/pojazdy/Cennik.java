@@ -1,4 +1,4 @@
-package wypozyczalnia;
+package pojazdy;
 
 public class Cennik{
 	static int[] cenaSamochodu = new int[5];

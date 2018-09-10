@@ -7,9 +7,14 @@ package wypozyczalnia;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.Date;
+
+import osoby.Klient;
+import pojazdy.Cennik;
+import pojazdy.Pojazd;
+import pojazdy.SegmentSamochodu;
+import pojazdy.TypMotocykla;
+import pojazdy.TypRoweru;
 
 /**
  *
@@ -30,12 +35,11 @@ public class Rezerwacja {
     public Rezerwacja(LocalDate dataStartu, LocalDate dataKonca, Klient klient,
                       Pojazd pojazd, StatusRezerwacji statusRezerwacji){
         
-        this.idRezerwacji=licznikId;
+        Rezerwacja.idRezerwacji=licznikId;
         this.dataStartu=dataStartu;
         this.dataKonca=dataKonca;
         this.klient=klient;
         this.pojazd=pojazd;
-        this.kosztRezerwacji=kosztRezerwacji;
         this.statusRezerwacji=statusRezerwacji;
         this.dlugosc= ChronoUnit.DAYS.between(dataStartu,dataKonca);
         DataStore.storeRezerwacja(this);

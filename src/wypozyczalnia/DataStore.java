@@ -1,8 +1,16 @@
 package wypozyczalnia;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import osoby.Klient;
+import osoby.KlientFirma;
+import osoby.KlientOsFizyczna;
+import pojazdy.Pojazd;
+import pojazdy.SegmentSamochodu;
+import pojazdy.TypMotocykla;
+import pojazdy.TypNadwozia;
+import pojazdy.TypRoweru;
 
 
 
@@ -10,14 +18,14 @@ public class DataStore{
 	private static DataBaseList db = new DataBaseList();
 	
 	public static void storeKlientFirma(KlientFirma k) {
-		if(sprawdzKlientaFirma(k.imie, k.nazwisko, k.getDataUrodzenia(), k.adres,
-				k.tel, k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
+		if(sprawdzKlientaFirma(k.getImie(), k.getNazwisko(), k.getDataUrodzenia(), k.getAdres(),
+				k.getTel(), k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
 			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
 	}
 	public static void storeKlientOsFizyczna(KlientOsFizyczna k) {
-		if(sprawdzKlientaOsFizyczna(k.imie,k.nazwisko,k.getDataUrodzenia(),k.adres,k.tel,k.getNumerDowodu())){
+		if(sprawdzKlientaOsFizyczna(k.getImie(),k.getNazwisko(),k.getDataUrodzenia(),k.getAdres(),k.getTel(),k.getNumerDowodu())){
 			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
@@ -141,7 +149,6 @@ public class DataStore{
 	public static boolean sprawdzKlientaFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
              String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
   
-		 DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
 		 LocalDate teraz = LocalDate.now();
 
 		 if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
@@ -160,7 +167,6 @@ public class DataStore{
 	 public static boolean sprawdzKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
 	            String tel, String numerDowodu){
 	 
-	    	DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");           
 	    	LocalDate teraz = LocalDate.now();
 
 	    	if(teraz.minusYears(18).isBefore(dataUrodzenia)) {

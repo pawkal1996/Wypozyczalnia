@@ -1,5 +1,8 @@
 package wypozyczalnia;
 
+import pojazdy.Pojazd;
+import pojazdy.TypRoweru;
+
 public class Rower extends Pojazd {
     private TypRoweru typRoweru;
     

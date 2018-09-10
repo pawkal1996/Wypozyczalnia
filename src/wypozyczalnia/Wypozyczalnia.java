@@ -2,7 +2,15 @@ package wypozyczalnia;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
+import osoby.KlientFirma;
+import osoby.KlientOsFizyczna;
+import pojazdy.Cennik;
+import pojazdy.SegmentSamochodu;
+import pojazdy.TypMotocykla;
+import pojazdy.TypNadwozia;
+import pojazdy.TypRoweru;
+
 
 
 

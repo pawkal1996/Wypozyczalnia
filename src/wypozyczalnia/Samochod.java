@@ -1,6 +1,8 @@
 package wypozyczalnia;
 
-import java.time.LocalDate;
+import pojazdy.PojazdSpalinowy;
+import pojazdy.SegmentSamochodu;
+import pojazdy.TypNadwozia;
 
 public class Samochod extends PojazdSpalinowy {
     
