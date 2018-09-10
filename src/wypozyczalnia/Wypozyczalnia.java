@@ -17,7 +17,7 @@ public class Wypozyczalnia {
         
         Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
         Samochod mot2 = new Samochod("Nissan", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
-        Samochod mot3 = new Samochod("Ferrari", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+        Samochod mot3 = new Samochod("Ferrari", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.C);
         Samochod mot4 = new Samochod("Fiat", "Astra", 25, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
         Samochod mot5 = new Samochod("Kamaz", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
         Motocykl mot6 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
@@ -32,7 +32,7 @@ public class Wypozyczalnia {
         				"Dzika 12","384294123", "AXZ123345");
         
         Rezerwacja rez1  =new Rezerwacja(LocalDate.parse("2018 07 14",formatDaty), LocalDate.parse("2018 07 15",formatDaty), klient,
-                mot3, 150, StatusRezerwacji.PLANOWANA);
+                mot1, 150, StatusRezerwacji.PLANOWANA);
         Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
                 mot3, 150, StatusRezerwacji.PLANOWANA);
         

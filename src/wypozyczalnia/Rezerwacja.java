@@ -45,9 +45,10 @@ public class Rezerwacja {
     public int obliczKosztRezerwacji() {
     	int iloscDni = (int)ChronoUnit.DAYS.between(this.dataStartu,this.dataKonca);
     	if(this.pojazd instanceof Samochod) {
-    	Samochod car=(Samochod)this.pojazd;
-    	SegmentSamochodu segmentTmp = car.getSegmentSamochodu();
-    	return iloscDni*Cennik.cena[SegmentSamochodu.segmentTmp.getValue()];}
+    		Samochod car=(Samochod)this.pojazd;
+    		SegmentSamochodu segmentTmp = car.getSegmentSamochodu();
+    		return iloscDni*Cennik.cena[segmentTmp.getValue()];
+    	}
     	return 0;
     	
     }
