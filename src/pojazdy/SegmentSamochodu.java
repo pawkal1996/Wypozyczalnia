@@ -6,7 +6,7 @@ public enum SegmentSamochodu {
 	C(2),
 	D(3),
 	E(4);
-	
+
 	int value;
 	SegmentSamochodu(int value){
 		this.value=value;

@@ -5,11 +5,11 @@
  */
 package pojazdy;
 
-    public enum TypNadwozia {
-    HATCHBACK,
-    SEDAN,
-    KOMBI,
-    SUV,
-    PICKUP,
-    KABRIOLET,    
-    }
+public enum TypNadwozia {
+	HATCHBACK,
+	SEDAN,
+	KOMBI,
+	SUV,
+	PICKUP,
+	KABRIOLET,    
+}

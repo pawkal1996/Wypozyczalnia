@@ -1,8 +1,8 @@
 package rezerwacje;
 
 public enum StatusRezerwacji {
-    PLANOWANA,
-    TRWAJACA,
-    ZAKONCZONA,
-    ANULOWANA
+	PLANOWANA,
+	TRWAJACA,
+	ZAKONCZONA,
+	ANULOWANA
 }
