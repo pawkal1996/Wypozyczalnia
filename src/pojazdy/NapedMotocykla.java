@@ -1,4 +1,4 @@
-package wypozyczalnia;
+package pojazdy;
 
 public enum NapedMotocykla {
     LANCUCH,

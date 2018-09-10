@@ -7,7 +7,7 @@ package osoby;
 
 import java.time.LocalDate;
 
-import wypozyczalnia.DataStore;
+import datacheck.DataStore;
 
 /**
  *

@@ -1,8 +1,7 @@
 
-package wypozyczalnia;
+package pojazdy;
 
-import pojazdy.PojazdSpalinowy;
-import pojazdy.TypMotocykla;
+import datacheck.DataStore;
 
 public class Motocykl extends PojazdSpalinowy {
     

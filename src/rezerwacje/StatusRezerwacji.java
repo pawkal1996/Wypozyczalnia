@@ -1,4 +1,4 @@
-package wypozyczalnia;
+package rezerwacje;
 
 public enum StatusRezerwacji {
     PLANOWANA,

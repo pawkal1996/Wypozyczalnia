@@ -1,8 +1,6 @@
-package wypozyczalnia;
+package pojazdy;
 
-import pojazdy.PojazdSpalinowy;
-import pojazdy.SegmentSamochodu;
-import pojazdy.TypNadwozia;
+import datacheck.DataStore;
 
 public class Samochod extends PojazdSpalinowy {
     

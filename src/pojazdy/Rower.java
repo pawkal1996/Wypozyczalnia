@@ -1,7 +1,6 @@
-package wypozyczalnia;
+package pojazdy;
 
-import pojazdy.Pojazd;
-import pojazdy.TypRoweru;
+import datacheck.DataStore;
 
 public class Rower extends Pojazd {
     private TypRoweru typRoweru;

@@ -1,9 +1,10 @@
-package wypozyczalnia;
+package datacheck;
 
 import java.util.ArrayList;
 
 import osoby.Klient;
 import pojazdy.Pojazd;
+import rezerwacje.Rezerwacja;
 
 public interface StoreDriver {
 	public ArrayList<Rezerwacja> getListaRezerwacji(Pojazd pojazdSprawdzany);

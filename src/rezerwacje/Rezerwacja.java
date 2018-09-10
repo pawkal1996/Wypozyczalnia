@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package wypozyczalnia;
+package rezerwacje;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+import datacheck.DataStore;
 import osoby.Klient;
 import pojazdy.Cennik;
+import pojazdy.Motocykl;
 import pojazdy.Pojazd;
+import pojazdy.Rower;
+import pojazdy.Samochod;
 import pojazdy.SegmentSamochodu;
 import pojazdy.TypMotocykla;
 import pojazdy.TypRoweru;

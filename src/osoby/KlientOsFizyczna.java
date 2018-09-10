@@ -8,7 +8,7 @@ package osoby;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import wypozyczalnia.DataStore;
+import datacheck.DataStore;
 
 
 

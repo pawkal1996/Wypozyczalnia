@@ -6,10 +6,16 @@ import java.time.format.DateTimeFormatter;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
 import pojazdy.Cennik;
+import pojazdy.Motocykl;
+import pojazdy.NapedMotocykla;
+import pojazdy.Rower;
+import pojazdy.Samochod;
 import pojazdy.SegmentSamochodu;
 import pojazdy.TypMotocykla;
 import pojazdy.TypNadwozia;
 import pojazdy.TypRoweru;
+import rezerwacje.Rezerwacja;
+import rezerwacje.StatusRezerwacji;
 
 
 
