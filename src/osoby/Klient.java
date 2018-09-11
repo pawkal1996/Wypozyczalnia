@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  * @author Paweł K
  */
 public abstract class Klient extends Osoba {
-	private static int idKlienta;
+	private int idKlienta=0;
 	private int iloscRezerwacji=0;
 	private final LocalDate dataRejestracji;
 
@@ -24,7 +24,7 @@ public abstract class Klient extends Osoba {
 			String tel){
 		super(imie, nazwisko, dataUrodzenia, adres, tel);
 
-		Klient.idKlienta=licznikIdKlienta;
+		this.idKlienta=licznikIdKlienta;
 		this.dataRejestracji = LocalDate.now();
 
 	}

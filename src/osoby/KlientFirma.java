@@ -20,8 +20,7 @@ public class KlientFirma extends Klient {
 
 
 	public KlientFirma(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-			String tel,
-			String nazwaFirmy, String nipFirmy, String adresFirmy){
+			String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
 		super(imie, nazwisko, dataUrodzenia, adres, tel);
 
 		this.nazwaFirmy=nazwaFirmy;
