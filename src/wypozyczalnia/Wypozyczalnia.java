@@ -1,8 +1,10 @@
 package wypozyczalnia;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import dane.OdczytZPliku;
 import dane.ZapisDoPliku;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
@@ -29,7 +31,12 @@ public class Wypozyczalnia {
 	public static void main(String[] args) {
 
 		DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
-
+		try {
+			OdczytZPliku.wczytajDane();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot2 = new Samochod("Nissan", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot3 = new Samochod("Ferrari", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.C);
@@ -58,7 +65,14 @@ public class Wypozyczalnia {
 		System.out.println(klient1.getNazwisko()+ " ma "+klient1.getIloscRezerwacji()+" rezerwacji");
 		System.out.println(rez1.obliczKosztRezerwacji());
 		System.out.println(rez2.obliczKosztRezerwacji());
+		Rower rower1 = new Rower("Romet","Wigry",2009,2,TypRoweru.MIEJSKI);
 		ZapisDoPliku.aktualizujDane();
+		try {
+			OdczytZPliku.wczytajDane();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
 	}        
