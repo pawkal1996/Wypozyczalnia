@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 public abstract class Klient extends Osoba {
 	private static int idKlienta;
 	private int iloscRezerwacji=0;
-	private LocalDate dataRejestracji;
+	private final LocalDate dataRejestracji;
 
 	static int licznikIdKlienta;
 	DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");
