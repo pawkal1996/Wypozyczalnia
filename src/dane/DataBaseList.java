@@ -9,7 +9,7 @@ import rezerwacje.Rezerwacja;
 
 public class DataBaseList implements StoreDriver{
 	private static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
-	private static ArrayList<Pojazd> listaPojazd = new ArrayList<Pojazd>();
+	static ArrayList<Pojazd> listaPojazd = new ArrayList<Pojazd>();
 	private static ArrayList<Rezerwacja> listaRezerwacja = new ArrayList<Rezerwacja>();
 
 	public boolean zapiszKlienta(Klient klient) {
