@@ -11,6 +11,7 @@ import pojazdy.Motocykl;
 import pojazdy.Pojazd;
 import pojazdy.Rower;
 import pojazdy.Samochod;
+import rezerwacje.Rezerwacja;
 
 
 
@@ -18,9 +19,11 @@ public class ZapisDoPliku {
 	public static void aktualizujDane() {	
 		PrintWriter pw = null;
 		PrintWriter pw1 = null;
+		PrintWriter pw2 = null;
 		try {
 			pw = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\pojazdy.txt");
 			pw1 = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\klienci.txt");
+			pw2 = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\rezerwacje.txt");
 			for(Pojazd i : DataBaseList.listaPojazd) {
 				if(i instanceof Samochod) {
 					Samochod autoTmp = (Samochod)i;
@@ -57,6 +60,11 @@ public class ZapisDoPliku {
 				
 			}
 			pw1.close();
+			for(Rezerwacja i : DataBaseList.listaRezerwacja) {
+				pw2.println(i.getIdRezerwacji()+" "+i.getDataStartu()+" "+i.getDataKonca()+" "+i.getKlient().getIdKlienta()+
+						" "+i.getPojazd().getId()+" "+i.getStatusRezerwacji());
+			}
+			pw2.close();
 
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();

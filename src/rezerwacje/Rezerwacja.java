@@ -7,7 +7,6 @@ package rezerwacje;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 
 import datacheck.DataStore;
 import osoby.Klient;
@@ -25,21 +24,21 @@ import pojazdy.TypRoweru;
  * @author Paweł K
  */
 public class Rezerwacja {
-	private static int idRezerwacji;
+	private int idRezerwacji;
 	private LocalDate dataStartu;
 	private LocalDate dataKonca;
 	private Klient klient;
 	private Pojazd pojazd;
 	private int kosztRezerwacji;
 	private StatusRezerwacji statusRezerwacji;
-	public static ArrayList<Rezerwacja> listaRezerwacji = new ArrayList<Rezerwacja>();
+
 	static int licznikId=0;
 
 	long dlugosc;
 	public Rezerwacja(LocalDate dataStartu, LocalDate dataKonca, Klient klient,
 			Pojazd pojazd, StatusRezerwacji statusRezerwacji){
 
-		Rezerwacja.idRezerwacji=licznikId;
+		this.idRezerwacji=licznikId;
 		this.dataStartu=dataStartu;
 		this.dataKonca=dataKonca;
 		this.klient=klient;
