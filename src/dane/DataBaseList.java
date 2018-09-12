@@ -26,7 +26,10 @@ public class DataBaseList implements StoreDriver{
 		listaRezerwacja.add(r);
 		return true;
 	}
-
+	
+	public static void usunPojazd(int i) {
+		listaPojazd.remove(i);
+	}
 	public ArrayList<Rezerwacja> getListaRezerwacji(Pojazd p) {
 		ArrayList<Rezerwacja> listaRez = new ArrayList<Rezerwacja>();
 		for (Rezerwacja i : listaRezerwacja) {

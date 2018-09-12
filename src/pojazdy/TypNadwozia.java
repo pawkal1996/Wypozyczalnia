@@ -11,5 +11,7 @@ public enum TypNadwozia {
 	KOMBI,
 	SUV,
 	PICKUP,
-	KABRIOLET,    
+	KABRIOLET;
+	
+
 }
