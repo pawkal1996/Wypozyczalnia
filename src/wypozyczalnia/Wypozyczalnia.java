@@ -38,14 +38,14 @@ public class Wypozyczalnia {
 			e.printStackTrace();
 		}
 		Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
-		Samochod mot2 = new Samochod("Nissan", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+		Samochod mot2 = new Samochod("Land rover", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot3 = new Samochod("Ferrari", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.C);
 		Samochod mot4 = new Samochod("Fiat", "Astra", 25, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot5 = new Samochod("Kamaz", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Motocykl mot6 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
-		Motocykl mot7 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
+		Motocykl mot7 = new Motocykl("Kaw asaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
 		Motocykl mot8 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
-		Rower rower = new Rower("Romet","Wigry",2009,2,TypRoweru.MIEJSKI);
+		Rower rower = new Rower("Ro met","Wigry",2009,2,TypRoweru.MIEJSKI);
 
 		KlientFirma klient = new KlientFirma("Pawel", "Nowak", LocalDate.parse("2000 07 12",formatDaty), "Lowicka 23","789100081",
 				"Kaszanki3", "0920385520", "Dzika 812"); 
@@ -67,6 +67,7 @@ public class Wypozyczalnia {
 		System.out.println(rez2.obliczKosztRezerwacji());
 		Rower rower1 = new Rower("Romet","Wigry",2009,2,TypRoweru.MIEJSKI);
 		ZapisDoPliku.aktualizujDane();
+		
 		try {
 			OdczytZPliku.wczytajDane();
 		} catch (FileNotFoundException e) {

@@ -10,7 +10,7 @@ public class OdczytZPliku {
 		Scanner sc = new Scanner(pojazdy);
 		while(sc.hasNext()) {
 			System.out.println(sc.nextLine());	
-			
+
 		}
 		sc.close();
 	}

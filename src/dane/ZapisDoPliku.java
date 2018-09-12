@@ -27,20 +27,20 @@ public class ZapisDoPliku {
 			for(Pojazd i : DataBaseList.listaPojazd) {
 				if(i instanceof Samochod) {
 					Samochod autoTmp = (Samochod)i;
-					pw.println("S "+autoTmp.getId()+" "+autoTmp.getMarka()+" "+autoTmp.getModel()+" "+autoTmp.getRokProdukcji()+
-							" "+autoTmp.getIloscMiejsc()+" "+autoTmp.getNrRej()+" "+autoTmp.getVin()+" "+autoTmp.getMoc()+
-							" "+autoTmp.getPojemnoscSilnika()+" "+autoTmp.getTypNadwozia()+" "+autoTmp.getIloscDrzwi()+
+					pw.println("S "+autoTmp.getId()+" "+autoTmp.getMarka().replace(" ", "_")+" "+autoTmp.getModel().replace(" ", "_")
+							+" "+autoTmp.getRokProdukcji()+" "+autoTmp.getIloscMiejsc()+" "+autoTmp.getNrRej()+" "+autoTmp.getVin()+
+							" "+autoTmp.getMoc()+" "+autoTmp.getPojemnoscSilnika()+" "+autoTmp.getTypNadwozia()+" "+autoTmp.getIloscDrzwi()+
 							" "+autoTmp.getSegmentSamochodu());
 				}
 				if(i instanceof Motocykl) {
 					Motocykl motoTmp = (Motocykl)i;
-					pw.println("M "+motoTmp.getId()+" "+motoTmp.getMarka()+" "+motoTmp.getModel()+" "+motoTmp.getRokProdukcji()+
+					pw.println("M "+motoTmp.getId()+" "+motoTmp.getMarka().replace(" ", "_")+" "+motoTmp.getModel().replace(" ", "_")+" "+motoTmp.getRokProdukcji()+
 							" "+motoTmp.getIloscMiejsc()+" "+motoTmp.getNrRej()+" "+motoTmp.getVin()+" "+motoTmp.getMoc()+
 							" "+motoTmp.getPojemnoscSilnika()+" "+motoTmp.getTypMotocykla()+" "+motoTmp.getNapedMotocykla());
 				}
 				if(i instanceof Rower) {
 					Rower rowerTmp = (Rower)i;
-					pw.println("R "+rowerTmp.getId()+" "+rowerTmp.getMarka()+" "+rowerTmp.getModel()+" "+rowerTmp.getRokProdukcji()+
+					pw.println("R "+rowerTmp.getId()+" "+rowerTmp.getMarka().replace(" ", "_")+" "+rowerTmp.getModel().replace(" ", "_")+" "+rowerTmp.getRokProdukcji()+
 							" "+rowerTmp.getIloscMiejsc()+" "+rowerTmp.getTypRoweru());
 				}
 			}
@@ -57,7 +57,7 @@ public class ZapisDoPliku {
 					pw1.println("O "+klientTmp.getIdKlienta()+" "+klientTmp.getImie()+" "+klientTmp.getNazwisko()+
 							" "+klientTmp.getDataUrodzenia()+" "+klientTmp.getAdres()+" "+klientTmp.getTel());
 				}
-				
+
 			}
 			pw1.close();
 			for(Rezerwacja i : DataBaseList.listaRezerwacja) {
