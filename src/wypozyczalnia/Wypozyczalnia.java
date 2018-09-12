@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import dane.DataBaseList;
 import dane.OdczytZPliku;
 import dane.ZapisDoPliku;
+import datacheck.DataStore;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
 import pojazdy.Cennik;
@@ -39,11 +40,11 @@ public class Wypozyczalnia {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*
+		
 		Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot2 = new Samochod("Land rover", "Discovery", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot3 = new Samochod("Ferrari", "Testarosa", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.C);
-		Samochod mot4 = new Samochod("Fiat", "Panda", 25, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
+		Samochod mot4 = new Samochod("Fiat", "Panda", 1995, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot5 = new Samochod("Kamaz", "U300", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 
 		Motocykl mot6 = new Motocykl("Kawasaki","Ninja",2005,2,"WR1231","ASDQWEASDQWE32190",210,1989,TypMotocykla.SZOSOWY,NapedMotocykla.PAS);
@@ -52,7 +53,7 @@ public class Wypozyczalnia {
 
 		Rower rower = new Rower("Ro met","Wigry",2009,2,TypRoweru.MIEJSKI);
 		Rower rower2 = new Rower("Tadziu","Badziu",2009,2,TypRoweru.DZIECIECY); 
-		 
+		
 		
 		KlientFirma klient = new KlientFirma("Pawel", "Nowak", LocalDate.parse("2000 07 12",formatDaty), "Lowicka 23","789100081",
 				"Kaszanki3", "0920385520", "Dzika 812"); 
@@ -66,8 +67,8 @@ public class Wypozyczalnia {
 		Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
 				mot3, StatusRezerwacji.PLANOWANA);
 		
-*/
 
+		DataStore.unstorePojazd(mot3);
 		ZapisDoPliku.aktualizujDane();
 	}        
 }

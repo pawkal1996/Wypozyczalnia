@@ -190,6 +190,14 @@ public class DataStore{
 
 		return true;
 	}
+	
+	public static void unstorePojazd(Pojazd p) {
+		db.usunPojazd(p);
+	}
+	
+	public static void unstoreKlient(Klient k) {
+		db.usunKlienta(k);
+	}
 
 
 }

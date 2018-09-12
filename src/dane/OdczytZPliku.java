@@ -109,7 +109,7 @@ public class OdczytZPliku {
 		sc1.close();
 
 		while(sc2.hasNext()) {
-			
+
 			line=sc2.nextLine().split(";");
 			String dataStartu = line[1];
 			String dataKonca = line[2];
@@ -129,8 +129,6 @@ public class OdczytZPliku {
 					pojazd = i;
 				}
 			}
-
-
 
 			Rezerwacja rez = new Rezerwacja(LocalDate.parse(dataStartu, formatDaty), LocalDate.parse(dataKonca, formatDaty),
 					klient, pojazd, StatusRezerwacji.valueOf(statusRezerwacji));

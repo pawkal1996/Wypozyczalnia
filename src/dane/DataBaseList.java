@@ -27,9 +27,6 @@ public class DataBaseList implements StoreDriver{
 		return true;
 	}
 	
-	public static void usunPojazd(int i) {
-		listaPojazd.remove(i);
-	}
 	public ArrayList<Rezerwacja> getListaRezerwacji(Pojazd p) {
 		ArrayList<Rezerwacja> listaRez = new ArrayList<Rezerwacja>();
 		for (Rezerwacja i : listaRezerwacja) {
@@ -68,6 +65,20 @@ public class DataBaseList implements StoreDriver{
 
 	public ArrayList<Rezerwacja> getListaRezerwacja(){
 		return listaRezerwacja;
+	}
+
+	@Override
+	public boolean usunPojazd(Pojazd p) {
+		// TODO Auto-generated method stub
+		listaPojazd.remove(p);
+		return false;
+	}
+
+	@Override
+	public boolean usunKlienta(Klient k) {
+		// TODO Auto-generated method stub
+		listaKlient.remove(k);
+		return false;
 	}
 
 }

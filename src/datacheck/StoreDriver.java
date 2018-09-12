@@ -13,4 +13,6 @@ public interface StoreDriver {
 	public boolean zapiszRezerwacje(Rezerwacja r);
 	public boolean czyIstniejeKlient(Klient k);
 	public boolean czyIstniejePojazd(Pojazd p);
+	public boolean usunPojazd(Pojazd p);
+	public boolean usunKlienta(Klient k);
 }
