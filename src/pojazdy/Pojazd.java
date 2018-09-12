@@ -22,7 +22,7 @@ public abstract class Pojazd {
 		return ++licznikIdPoj;
 	}   
 
-
+	
 
 	//gettery
 	public int getId(){

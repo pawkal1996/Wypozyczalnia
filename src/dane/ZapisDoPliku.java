@@ -55,14 +55,15 @@ public class ZapisDoPliku {
 				if(i instanceof KlientOsFizyczna) {
 					KlientOsFizyczna klientTmp = (KlientOsFizyczna)i;
 					pw1.println("O;"+klientTmp.getIdKlienta()+";"+klientTmp.getImie()+";"+klientTmp.getNazwisko()+
-							";"+klientTmp.getDataUrodzenia()+";"+klientTmp.getAdres()+";"+klientTmp.getTel());
+							";"+klientTmp.getDataUrodzenia()+";"+klientTmp.getAdres()+";"+klientTmp.getTel()+";"+
+							klientTmp.getNumerDowodu());
 				}
 
 			}
 			pw1.close();
 			for(Rezerwacja i : DataBaseList.listaRezerwacja) {
-				pw2.println(i.getIdRezerwacji()+" "+i.getDataStartu()+" "+i.getDataKonca()+" "+i.getKlient().getIdKlienta()+
-						" "+i.getPojazd().getId()+" "+i.getStatusRezerwacji());
+				pw2.println(i.getIdRezerwacji()+";"+i.getDataStartu()+";"+i.getDataKonca()+";"+i.getKlient().getIdKlienta()+
+						";"+i.getPojazd().getId()+";"+i.getStatusRezerwacji());
 			}
 			pw2.close();
 
