@@ -54,20 +54,24 @@ public class Wypozyczalnia {
 		Rower rower = new Rower("Ro met","Wigry",2009,2,TypRoweru.MIEJSKI, "ASFRFDSE33"); 
 		Rower rower2 = new Rower("Tadziu","Badziu",2009,2,TypRoweru.DZIECIECY, "SDFEE3242123"); 
 
-		
+		/*
 		KlientFirma klient = new KlientFirma("Pawel", "Nowak", LocalDate.parse("2000 07 12",formatDaty), "Lowicka 23","789100081",
 				"Kaszanki3", "0920389520", "Dzika 812"); 
 
 		KlientOsFizyczna klient1 = new KlientOsFizyczna("Kamil", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
 				"Dzika 12","384294123", "AXZ123345", "96072509887");
-
+		KlientOsFizyczna klient2 = new KlientOsFizyczna("Kamil", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
+				"Dzika 12","384294123", "AXZ123345", "96072612345");
 
 		Rezerwacja rez1  =new Rezerwacja(LocalDate.parse("2018 07 14",formatDaty), LocalDate.parse("2018 07 15",formatDaty), klient,
 				rower, StatusRezerwacji.PLANOWANA);
 		Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
 				mot3, StatusRezerwacji.PLANOWANA);
-
-		 
+		*/
+		KlientOsFizyczna klient = (KlientOsFizyczna) DataBaseList.listaKlient.get(2);
+		klient.zmienKlientaOsFizyczna("Karol", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
+				"Dzika 12","384294123", "AXZ123345", "96072509888");
+		System.out.println(klient.getImie());
 
 		ZapisDoPliku.aktualizujDane();
 	}        

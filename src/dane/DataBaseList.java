@@ -13,7 +13,7 @@ import pojazdy.Samochod;
 import rezerwacje.Rezerwacja;
 
 public class DataBaseList implements StoreDriver{
-	static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
+	public static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
 	static ArrayList<Pojazd> listaPojazd = new ArrayList<Pojazd>();
 	static ArrayList<Rezerwacja> listaRezerwacja = new ArrayList<Rezerwacja>();
 

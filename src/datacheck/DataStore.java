@@ -204,6 +204,9 @@ public class DataStore{
 		if(!numerDowodu.matches("[A-Z]{3}[0-9]{6}")) {
 			return false;
 		}
+		if(!pesel.matches("[0-9]{11}")) {
+			return false;
+		}
 
 		return true;
 	}
