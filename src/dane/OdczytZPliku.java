@@ -103,8 +103,9 @@ public class OdczytZPliku {
 				String adres = line[5];
 				String tel = line[6];
 				String nrDowodu = line[7];
+				String pesel = line[8];
 				KlientOsFizyczna klient = new KlientOsFizyczna(imie, nazwisko, LocalDate.parse(dataUr, formatDaty),
-						adres, tel, nrDowodu);
+						adres, tel, nrDowodu, pesel);
 			}
 		}
 		sc1.close();

@@ -56,7 +56,7 @@ public class ZapisDoPliku {
 					KlientOsFizyczna klientTmp = (KlientOsFizyczna)i;
 					pw1.println("O;"+klientTmp.getIdKlienta()+";"+klientTmp.getImie()+";"+klientTmp.getNazwisko()+
 							";"+klientTmp.getDataUrodzenia()+";"+klientTmp.getAdres()+";"+klientTmp.getTel()+";"+
-							klientTmp.getNumerDowodu());
+							klientTmp.getNumerDowodu()+";"+klientTmp.getPesel());
 				}
 
 			}

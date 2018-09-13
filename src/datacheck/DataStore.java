@@ -32,7 +32,8 @@ public class DataStore{
 		}
 	}
 	public static void storeKlientOsFizyczna(KlientOsFizyczna k) {
-		if(sprawdzKlientaOsFizyczna(k.getImie(),k.getNazwisko(),k.getDataUrodzenia(),k.getAdres(),k.getTel(),k.getNumerDowodu())){
+		if(sprawdzKlientaOsFizyczna(k.getImie(),k.getNazwisko(),k.getDataUrodzenia(),k.getAdres(),k.getTel(),k.getNumerDowodu(),
+				k.getPesel())){
 			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
@@ -186,10 +187,10 @@ public class DataStore{
 	}
 
 	public static boolean sprawdzKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-			String tel, String numerDowodu){
+			String tel, String numerDowodu, String pesel){
 
 		LocalDate teraz = LocalDate.now();
-		if(db.czyJestTakiKlient(numerDowodu)) {
+		if(db.czyJestTakiKlient(pesel)) {
 			return false;
 		}
 		if(teraz.minusYears(18).isBefore(dataUrodzenia)) {

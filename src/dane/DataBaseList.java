@@ -125,7 +125,7 @@ public class DataBaseList implements StoreDriver{
 			}
 			if(i instanceof KlientOsFizyczna) {
 				KlientOsFizyczna tmp = (KlientOsFizyczna)i;
-				if(tmp.getNumerDowodu().equals(identyfikator)) {
+				if(tmp.getPesel().equals(identyfikator)) {
 					return true;
 				}
 			}

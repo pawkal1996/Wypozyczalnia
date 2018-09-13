@@ -18,12 +18,13 @@ import datacheck.DataStore;
  */
 public class KlientOsFizyczna extends Klient {
 	private String numerDowodu;
-	public static ArrayList<KlientOsFizyczna> listaKlientOsFizyczna = new ArrayList<KlientOsFizyczna>();
+	private String pesel;
 
 	public KlientOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-			String tel, String numerDowodu){
+			String tel, String numerDowodu, String pesel){
 		super(imie, nazwisko, dataUrodzenia, adres, tel);
 		this.numerDowodu=numerDowodu;
+		this.pesel=pesel;
 		DataStore.storeKlientOsFizyczna(this);
 	}
 
@@ -32,13 +33,14 @@ public class KlientOsFizyczna extends Klient {
 
 
 	public boolean zmienKlientaOsFizyczna(String imie, String nazwisko, LocalDate dataUrodzenia, String adres,
-			String tel, String numerDowodu) {
-		if(DataStore.sprawdzKlientaOsFizyczna(imie,nazwisko,dataUrodzenia,adres,tel,numerDowodu)) {
+			String tel, String numerDowodu, String pesel) {
+		if(DataStore.sprawdzKlientaOsFizyczna(imie,nazwisko,dataUrodzenia,adres,tel,numerDowodu,pesel)) {
 			this.setImie(imie);
 			this.setNazwisko(nazwisko);
 			this.setDataUrodzenia(dataUrodzenia);
 			this.setAdres(adres);
 			this.setTel(tel);
+			this.setPesel(pesel);
 
 			return true;
 		}
@@ -49,8 +51,14 @@ public class KlientOsFizyczna extends Klient {
 	public String getNumerDowodu(){
 		return numerDowodu;
 	}    
+	public String getPesel() {
+		return pesel;
+	}
 	public void setNumerDowodu(String numerDowodu){
 		this.numerDowodu=numerDowodu;
+	}
+	public void setPesel(String pesel) {
+		this.pesel=pesel;
 	}
 
 }
