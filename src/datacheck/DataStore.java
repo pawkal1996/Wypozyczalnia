@@ -57,7 +57,7 @@ public class DataStore{
 	}
 
 	public static void storeRower(Rower p) {
-		if(sprawdzRower(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), p.getTypRoweru())) {
+		if(sprawdzRower(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), p.getTypRoweru(), p.getNrSeryjny())) {
 			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
@@ -102,11 +102,15 @@ public class DataStore{
 	}
 
 	public static boolean sprawdzRower(String marka, String model, int rokProdukcji, int iloscMiejsc,
-			TypRoweru typRoweru) {
+			TypRoweru typRoweru, String nrSeryjny) {
 		LocalDate teraz = LocalDate.now();
+		if(db.czyJestTakiPojazd(nrSeryjny)) {
+			return false;
+		}
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
+		
 		return true;
 	}
 
@@ -114,6 +118,9 @@ public class DataStore{
 			String nrRej, String vin, int moc, int pojemnoscSilnika, 
 			TypMotocykla typMotocykla, NapedMotocykla napedMotocykla) {
 		LocalDate teraz = LocalDate.now();
+		if(db.czyJestTakiPojazd(vin)) {
+			return false;
+		}
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
@@ -128,7 +135,7 @@ public class DataStore{
 		if(iloscMiejsc<0) {
 			return false;
 		}
-		// tu kolejne walidacje motocykla
+		
 		return true;
 
 	}
@@ -137,6 +144,9 @@ public class DataStore{
 			String nrRej, String vin, int moc, int pojemnoscSilnika, 
 			TypNadwozia typNadwozia, int iloscDrzwi, SegmentSamochodu segment) {
 		LocalDate teraz = LocalDate.now();
+		if(db.czyJestTakiPojazd(vin)) {
+			return false;
+		}
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
@@ -149,6 +159,7 @@ public class DataStore{
 		if(iloscMiejsc<0) {
 			return false;
 		}
+		
 		return true;
 
 	}
@@ -157,7 +168,10 @@ public class DataStore{
 			String tel, String nazwaFirmy, String nipFirmy, String adresFirmy){
 
 		LocalDate teraz = LocalDate.now();
-
+		
+		if(db.czyJestTakiKlient(nipFirmy)) {
+			return false;
+		}
 		if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
 			return false;               
 		}
@@ -175,7 +189,9 @@ public class DataStore{
 			String tel, String numerDowodu){
 
 		LocalDate teraz = LocalDate.now();
-
+		if(db.czyJestTakiKlient(numerDowodu)) {
+			return false;
+		}
 		if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
 			return false;               
 		}

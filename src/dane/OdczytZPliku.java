@@ -72,8 +72,9 @@ public class OdczytZPliku {
 				Integer rokProd = Integer.parseInt(line[4]);
 				Integer iloscMiejsc = Integer.parseInt(line[5]);
 				String typRoweru = line[6];
+				String nrSeryjny = line[7];
 
-				Rower mot = new Rower(marka, model, rokProd, iloscMiejsc, TypRoweru.valueOf(typRoweru));
+				Rower mot = new Rower(marka, model, rokProd, iloscMiejsc, TypRoweru.valueOf(typRoweru), nrSeryjny);
 			}
 
 		}

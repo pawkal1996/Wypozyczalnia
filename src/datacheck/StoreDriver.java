@@ -15,4 +15,7 @@ public interface StoreDriver {
 	public boolean czyIstniejePojazd(Pojazd p);
 	public boolean usunPojazd(Pojazd p);
 	public boolean usunKlienta(Klient k);
+	public boolean czyJestTakiPojazd(String nrIdentyfikacyjny);
+	public boolean czyJestTakiKlient(String identyfikator);
+	
 }

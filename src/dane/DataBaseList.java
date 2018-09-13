@@ -4,7 +4,12 @@ import java.util.ArrayList;
 
 import datacheck.StoreDriver;
 import osoby.Klient;
+import osoby.KlientFirma;
+import osoby.KlientOsFizyczna;
+import pojazdy.Motocykl;
 import pojazdy.Pojazd;
+import pojazdy.Rower;
+import pojazdy.Samochod;
 import rezerwacje.Rezerwacja;
 
 public class DataBaseList implements StoreDriver{
@@ -78,6 +83,53 @@ public class DataBaseList implements StoreDriver{
 	public boolean usunKlienta(Klient k) {
 		// TODO Auto-generated method stub
 		listaKlient.remove(k);
+		return false;
+	}
+
+	@Override
+	public boolean czyJestTakiPojazd(String nrIdentyfikacyjny) {
+		// TODO Auto-generated method stub
+		for(Pojazd i : listaPojazd) {
+			if(i instanceof Rower) {	
+				Rower tmp = (Rower)i;
+				if(tmp.getNrSeryjny().equalsIgnoreCase(nrIdentyfikacyjny)) {
+					return true;
+				}
+			}
+			if(i instanceof Samochod) {
+				Samochod tmp = (Samochod)i;
+				if(tmp.getVin().equalsIgnoreCase(nrIdentyfikacyjny)) {
+					return true;
+				}
+			}
+			if(i instanceof Motocykl) {
+				Motocykl tmp = (Motocykl)i;
+				if(tmp.getVin().equalsIgnoreCase(nrIdentyfikacyjny)) {
+					return true;
+				}
+			}
+			
+		}
+		return false;
+	}
+
+	@Override
+	public boolean czyJestTakiKlient(String identyfikator) {
+		// TODO Auto-generated method stub
+		for(Klient i : listaKlient) {
+			if(i instanceof KlientFirma) {
+				KlientFirma tmp = (KlientFirma)i;
+				if(tmp.getNipFirmy().equals(identyfikator)) {
+					return true;
+				}
+			}
+			if(i instanceof KlientOsFizyczna) {
+				KlientOsFizyczna tmp = (KlientOsFizyczna)i;
+				if(tmp.getNumerDowodu().equals(identyfikator)) {
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 

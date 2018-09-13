@@ -41,7 +41,7 @@ public class ZapisDoPliku {
 				if(i instanceof Rower) {
 					Rower rowerTmp = (Rower)i;
 					pw.println("R;"+rowerTmp.getId()+";"+rowerTmp.getMarka()+";"+rowerTmp.getModel()+";"+rowerTmp.getRokProdukcji()+
-							";"+rowerTmp.getIloscMiejsc()+";"+rowerTmp.getTypRoweru());
+							";"+rowerTmp.getIloscMiejsc()+";"+rowerTmp.getTypRoweru()+";"+rowerTmp.getNrSeryjny());
 				}
 			}
 			pw.close();
