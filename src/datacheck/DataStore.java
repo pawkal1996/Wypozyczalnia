@@ -26,14 +26,15 @@ public class DataStore{
 
 	public static void storeKlientFirma(KlientFirma k) {
 		if(sprawdzKlientaFirma(k.getImie(), k.getNazwisko(), k.getDataUrodzenia(), k.getAdres(),
-				k.getTel(), k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy())) {
+				k.getTel(), k.getNazwaFirmy(), k.getNipFirmy(), k.getAdresFirmy()) && (!db.czyJestTakiKlient(k.getNipFirmy()))) {
+			
 			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
 	}
 	public static void storeKlientOsFizyczna(KlientOsFizyczna k) {
 		if(sprawdzKlientaOsFizyczna(k.getImie(),k.getNazwisko(),k.getDataUrodzenia(),k.getAdres(),k.getTel(),k.getNumerDowodu(),
-				k.getPesel())){
+				k.getPesel()) && (!db.czyJestTakiKlient(k.getPesel()))){
 			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
 		}
@@ -42,7 +43,7 @@ public class DataStore{
 	public static void storeSamochod(Samochod p) {
 		if(sprawdzSamochod(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), 
 				p.getNrRej(), p.getVin(), p.getMoc(), p.getPojemnoscSilnika(), 
-				p.getTypNadwozia(), p.getIloscDrzwi(), p.getSegmentSamochodu())){
+				p.getTypNadwozia(), p.getIloscDrzwi(), p.getSegmentSamochodu())&&(!db.czyJestTakiPojazd(p.getVin()))){
 			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
@@ -51,14 +52,15 @@ public class DataStore{
 	public static void storeMotocykl(Motocykl p) {
 		if(sprawdzMotocykl(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), 
 				p.getNrRej(), p.getVin(), p.getMoc(), p.getPojemnoscSilnika(),p.getTypMotocykla(),
-				p.getNapedMotocykla())) {
+				p.getNapedMotocykla())&&(!db.czyJestTakiPojazd(p.getVin()))) {
 			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
 	}
 
 	public static void storeRower(Rower p) {
-		if(sprawdzRower(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), p.getTypRoweru(), p.getNrSeryjny())) {
+		if(sprawdzRower(p.getMarka(),p.getModel(),p.getRokProdukcji(), p.getIloscMiejsc(), p.getTypRoweru(), p.getNrSeryjny())
+				&&(!db.czyJestTakiPojazd(p.getNrSeryjny()))) {
 			Pojazd.zwiekszId();
 			db.zapiszPojazd(p);
 		}
@@ -105,9 +107,7 @@ public class DataStore{
 	public static boolean sprawdzRower(String marka, String model, int rokProdukcji, int iloscMiejsc,
 			TypRoweru typRoweru, String nrSeryjny) {
 		LocalDate teraz = LocalDate.now();
-		if(db.czyJestTakiPojazd(nrSeryjny)) {
-			return false;
-		}
+		
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
@@ -119,9 +119,7 @@ public class DataStore{
 			String nrRej, String vin, int moc, int pojemnoscSilnika, 
 			TypMotocykla typMotocykla, NapedMotocykla napedMotocykla) {
 		LocalDate teraz = LocalDate.now();
-		if(db.czyJestTakiPojazd(vin)) {
-			return false;
-		}
+		
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
@@ -145,9 +143,7 @@ public class DataStore{
 			String nrRej, String vin, int moc, int pojemnoscSilnika, 
 			TypNadwozia typNadwozia, int iloscDrzwi, SegmentSamochodu segment) {
 		LocalDate teraz = LocalDate.now();
-		if(db.czyJestTakiPojazd(vin)) {
-			return false;
-		}
+		
 		if(rokProdukcji>teraz.getYear()||(rokProdukcji<1970)) {
 			return false;
 		}
@@ -170,9 +166,7 @@ public class DataStore{
 
 		LocalDate teraz = LocalDate.now();
 		
-		if(db.czyJestTakiKlient(nipFirmy)) {
-			return false;
-		}
+		
 		if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
 			return false;               
 		}
@@ -190,9 +184,7 @@ public class DataStore{
 			String tel, String numerDowodu, String pesel){
 
 		LocalDate teraz = LocalDate.now();
-		if(db.czyJestTakiKlient(pesel)) {
-			return false;
-		}
+		
 		if(teraz.minusYears(18).isBefore(dataUrodzenia)) {
 			return false;               
 		}

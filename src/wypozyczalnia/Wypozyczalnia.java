@@ -40,7 +40,7 @@ public class Wypozyczalnia {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		/*
 		Samochod mot1 = new Samochod("Opel", "Astra", 2005, 5, "DW485WP", "ASDQWEASDQWE32190", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot2 = new Samochod("Land rover", "Discovery", 2005, 5, "DW485WP", "ASDQWEASDQWE32191", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.A);
 		Samochod mot3 = new Samochod("Ferrari", "Testarosa", 2005, 5, "DW485WP", "ASDQWEASDQWE32192", 125, 1788, TypNadwozia.HATCHBACK, 5, SegmentSamochodu.C);
@@ -54,7 +54,7 @@ public class Wypozyczalnia {
 		Rower rower = new Rower("Ro met","Wigry",2009,2,TypRoweru.MIEJSKI, "ASFRFDSE33"); 
 		Rower rower2 = new Rower("Tadziu","Badziu",2009,2,TypRoweru.DZIECIECY, "SDFEE3242123"); 
 
-		/*
+		
 		KlientFirma klient = new KlientFirma("Pawel", "Nowak", LocalDate.parse("2000 07 12",formatDaty), "Lowicka 23","789100081",
 				"Kaszanki3", "0920389520", "Dzika 812"); 
 
@@ -69,7 +69,7 @@ public class Wypozyczalnia {
 				mot3, StatusRezerwacji.PLANOWANA);
 		*/
 		KlientOsFizyczna klient = (KlientOsFizyczna) DataBaseList.listaKlient.get(2);
-		klient.zmienKlientaOsFizyczna("Karol", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
+		klient.zmienKlientaOsFizyczna("Zbigniew", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
 				"Dzika 12","384294123", "AXZ123345", "96072509888");
 		System.out.println(klient.getImie());
 
