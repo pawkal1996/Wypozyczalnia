@@ -6,6 +6,7 @@ import datacheck.StoreDriver;
 import osoby.Klient;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
+import osoby.Pracownik;
 import pojazdy.Motocykl;
 import pojazdy.Pojazd;
 import pojazdy.Rower;
@@ -16,7 +17,12 @@ public class DataBaseList implements StoreDriver{
 	public static ArrayList<Klient> listaKlient = new ArrayList<Klient>();
 	static ArrayList<Pojazd> listaPojazd = new ArrayList<Pojazd>();
 	static ArrayList<Rezerwacja> listaRezerwacja = new ArrayList<Rezerwacja>();
+	public static ArrayList<Pracownik> listaPracownik = new ArrayList<Pracownik>();
 
+	public boolean zapiszPracownika (Pracownik p) {
+		listaPracownik.add(p);
+		return true;
+	}
 	public boolean zapiszKlienta(Klient klient) {
 		listaKlient.add(klient);
 		return true;
@@ -40,6 +46,15 @@ public class DataBaseList implements StoreDriver{
 			}
 		}
 		return listaRez;
+	}
+	
+	public boolean czyIstniejePracownik(Pracownik p) {
+		for(Pracownik i : listaPracownik) {
+			if(p.equals(p)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean czyIstniejeKlient(Klient k) {

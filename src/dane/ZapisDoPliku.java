@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import osoby.Klient;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
+import osoby.Pracownik;
 import pojazdy.Motocykl;
 import pojazdy.Pojazd;
 import pojazdy.Rower;
@@ -20,10 +21,12 @@ public class ZapisDoPliku {
 		PrintWriter pw = null;
 		PrintWriter pw1 = null;
 		PrintWriter pw2 = null;
+		PrintWriter pw3 = null;
 		try {
 			pw = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\pojazdy.txt");
 			pw1 = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\klienci.txt");
 			pw2 = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\rezerwacje.txt");
+			pw3 = new PrintWriter("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\pracownicy.txt");
 			for(Pojazd i : DataBaseList.listaPojazd) {
 				if(i instanceof Samochod) {
 					Samochod autoTmp = (Samochod)i;
@@ -66,7 +69,12 @@ public class ZapisDoPliku {
 						";"+i.getPojazd().getId()+";"+i.getStatusRezerwacji());
 			}
 			pw2.close();
-
+			for(Pracownik i : DataBaseList.listaPracownik) {
+				pw3.println(i.getIdKlienta()+";"+i.getImie()+";"+i.getNazwisko()+
+						";"+i.getDataUrodzenia()+";"+i.getAdres()+";"+i.getTel()+";"+
+						i.getNumerDowodu()+";"+i.getPesel()+";"+i.getDataZatrudnienia()+";"+i.getPensja());
+			}
+			pw3.close();
 		} catch (FileNotFoundException ex) {
 			ex.printStackTrace();
 		} 

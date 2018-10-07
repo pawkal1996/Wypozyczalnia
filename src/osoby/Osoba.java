@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 public abstract class Osoba {
 	protected String imie;
 	protected String nazwisko;
-	private LocalDate dataUrodzenia;
+	protected LocalDate dataUrodzenia;
 	protected String adres;
 	protected String tel;
 	DateTimeFormatter formatDaty = DateTimeFormatter.ofPattern("yyyy MM dd");

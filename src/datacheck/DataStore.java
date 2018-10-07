@@ -7,6 +7,7 @@ import dane.DataBaseList;
 import osoby.Klient;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
+import osoby.Pracownik;
 import pojazdy.Motocykl;
 import pojazdy.NapedMotocykla;
 import pojazdy.Pojazd;
@@ -37,6 +38,14 @@ public class DataStore{
 				k.getPesel()) && (!db.czyJestTakiKlient(k.getPesel()))){
 			Klient.zwiekszIdKlienta();
 			db.zapiszKlienta(k);
+		}
+	}
+	
+	public static void storePracownik(Pracownik k) {
+		if(sprawdzKlientaOsFizyczna(k.getImie(),k.getNazwisko(),k.getDataUrodzenia(),k.getAdres(),k.getTel(),k.getNumerDowodu(),
+				k.getPesel())){
+			Pracownik.zwiekszIdPracownika();
+			db.zapiszPracownika(k);
 		}
 	}
 
@@ -77,8 +86,6 @@ public class DataStore{
 
 
 	}
-
-
 
 	public static boolean sprawdzRezerwacje(int idRezerwacji, LocalDate dataStartu, LocalDate dataKonca, Klient klient,
 			Pojazd pojazd, int kosztRezerwacji, StatusRezerwacji statusRezerwacji){

@@ -9,6 +9,7 @@ import java.util.Scanner;
 import osoby.Klient;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
+import osoby.Pracownik;
 import pojazdy.Motocykl;
 import pojazdy.NapedMotocykla;
 import pojazdy.Pojazd;
@@ -27,9 +28,11 @@ public class OdczytZPliku {
 		File pojazdy = new File("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\pojazdy.txt");
 		File klienci = new File("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\klienci.txt");
 		File rezerwacje = new File("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\rezerwacje.txt");
+		File pracownicy = new File("C:\\Users\\Pawe³ K\\Documents\\NetBeansProjects\\Wypozyczalnia\\src\\dane\\pracownicy.txt");
 		Scanner sc = new Scanner(pojazdy);
 		Scanner sc1 = new Scanner(klienci);
 		Scanner sc2 = new Scanner(rezerwacje);
+		Scanner sc3 = new Scanner(pracownicy);
 
 		String line[] = null;
 		while(sc.hasNext()) {
@@ -135,5 +138,22 @@ public class OdczytZPliku {
 			Rezerwacja rez = new Rezerwacja(LocalDate.parse(dataStartu, formatDaty), LocalDate.parse(dataKonca, formatDaty),
 					klient, pojazd, StatusRezerwacji.valueOf(statusRezerwacji));
 		}
+		sc2.close();
+		
+		while(sc3.hasNext()) {
+			line=sc3.nextLine().split(";");
+			String imie = line[1];
+			String nazwisko = line[2];
+			String dataUr = line[3];
+			String adres = line[4];
+			String tel = line[5];
+			String nrDowodu = line[6];
+			String pesel = line[7];
+			String dataZatrudnienia = line[8];
+			Integer pensja = Integer.parseInt(line[9]);
+			Pracownik pracownik = new Pracownik(imie, nazwisko, LocalDate.parse(dataUr, formatDaty),
+					adres, tel, nrDowodu, pesel, LocalDate.parse(dataZatrudnienia, formatDaty), pensja);
+		}
+		
 	}
 }

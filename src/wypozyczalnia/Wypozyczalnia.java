@@ -10,6 +10,7 @@ import dane.ZapisDoPliku;
 import datacheck.DataStore;
 import osoby.KlientFirma;
 import osoby.KlientOsFizyczna;
+import osoby.Pracownik;
 import pojazdy.Cennik;
 import pojazdy.Motocykl;
 import pojazdy.NapedMotocykla;
@@ -68,10 +69,8 @@ public class Wypozyczalnia {
 		Rezerwacja rez2  =new Rezerwacja(LocalDate.parse("2018 07 19",formatDaty), LocalDate.parse("2018 07 21",formatDaty), klient1,
 				mot3, StatusRezerwacji.PLANOWANA);
 		*/
-		KlientOsFizyczna klient = (KlientOsFizyczna) DataBaseList.listaKlient.get(2);
-		klient.zmienKlientaOsFizyczna("Zbigniew", "Kowalski", LocalDate.parse("1999 10 11", formatDaty),
-				"Dzika 12","384294123", "AXZ123345", "96072509888");
-		System.out.println(klient.getImie());
+		
+		
 
 		ZapisDoPliku.aktualizujDane();
 	}        
